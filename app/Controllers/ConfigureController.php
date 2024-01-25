@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Controllers;
+
+use CodeIgniter\Controller;
+use App\Models\ConfigureModel;
+use CodeIgniter\CLI\Console;
+
+class ConfigureController extends Controller
+{
+    public function configure()
+    {
+        return view ('add_config.php');
+    }
+
+    public function config_form($businessTableID)
+    { 
+        $model = new ConfigureModel('businesstype');
+        $data['business'] = $model->getBusinessTypes();
+        $configModel = new ConfigureModel('business');
+        $data['businessData'] = $configModel->getBusinessData($businessTableID);
+
+        return view('edit_business.php', $data);
+    }
+
+    public function update($id)
+    {
+        $request = \Config\Services::request();
+        $model = new ConfigureModel('business');
+
+        $businessID = $id;
+
+        // Handle form submission (excluding image)
+        $businessData = [
+            'BusinessName' => $request->getPost('BusinessName'),
+            'RegName' => $request->getPost('RegName'),
+            'Email' => $request->getPost('Email'),
+            'Phone' => $request->getPost('Phone'),
+            'Address' => $request->getPost('Address'),
+            // 'businessTypeID' => $request->getPost('businessType'),
+            'charges' => $request->getPost('fee'),
+        ];
+    //   print_r ($businessData);
+    //   die();
+       
+        // Update business data in the database (excluding image)
+        $model->updateBusinessData($businessID, $businessData);
+
+        // Handle image upload without validation
+        $nicImage = $request->getFile('image');
+        $nicImageName = $nicImage->getName(); 
+        $nicImage->move(FCPATH . 'uploads', $nicImageName);
+
+        // Update the image name in the database
+        $model->updateBusinessImage($businessID, $nicImageName);
+
+        return redirect()->to(base_url('/configure'));
+    }
+}
