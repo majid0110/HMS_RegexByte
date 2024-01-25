@@ -219,7 +219,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Client Name</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="cName" />
+                            <input type="text" class="form-control" name="cName" required/>
                           </div>
                         </div>
                       </div>
@@ -227,7 +227,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Client Contact</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="cphone"/>
+                            <input type="text" class="form-control" name="cphone" required/>
                           </div>
                         </div>
                       </div>
@@ -237,7 +237,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Identification Type</label>
                           <div class="col-sm-9">
-                            <select class="form-control" name ="idType">
+                            <select class="form-control" name ="idType" required/>
                               <option>CNIC</option>
                               <option>Passport</option>
                             </select>
@@ -248,7 +248,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Client CNIC</label>
                           <div class="col-sm-9">
-                          <input type="text" class="form-control" name="CNIC"/>
+                          <input type="text" class="form-control" name="CNIC" required/>
                           </div>
                         </div>
                       </div>
@@ -259,7 +259,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" name="cemail">Client Email</label>
                           <div class="col-sm-9">
-                          <input type="text" class="form-control" name="cemail"/>
+                          <input type="text" class="form-control" name="cemail" required/>
                           </div>
                         </div>
                       </div>
@@ -284,7 +284,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Def</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="cdef"/>
+                            <input type="text" class="form-control" name="cdef" required/>
                           </div>
                         </div>
                       </div>
@@ -294,7 +294,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Limit Expense</label>
                           <div class="col-sm-9">
-                            <input type="number" class="form-control" name="expense"/>
+                            <input type="number" class="form-control" name="expense" Value="0.0"/>
                           </div>
                         </div>
                       </div>
@@ -302,7 +302,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Discount</label>
                           <div class="col-sm-9">
-                            <input type="number" class="form-control" name="discount"/>
+                            <input type="number" class="form-control" Value="0.0" name="discount"/>
                           </div>
                         </div>
                       </div>
@@ -310,11 +310,14 @@
                     <div class="row">
                       <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Main Client</label>
-                            <div class="col-sm-9">
-                                <input type="checkbox" class="form-check-input" name="mclient" value="1"/>
+                             <!-- <label class="col-sm-3 col-form-label">Main Client</label>  -->
+                            <!-- <div class="col-sm-9"> -->
+                                <input type="checkbox" class="form-check-input" name="mclient" value="0" style="    margin-left: 9rem; display=flex">
+                                <span style="margin-left: 11rem;margin-top: -19px;">Main Client</span>
+                              </input>
+                                <!-- <label class="col-sm-3 col-form-label">Main Client</label>  -->
                             </div>
-                         </div>
+                         <!-- </div> -->
                      </div>
                     </div>
 

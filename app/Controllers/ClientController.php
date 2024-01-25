@@ -84,8 +84,6 @@ public function saveClientProfile()
     $businessID = $session->get('businessID');
 
     $mainClient = ($request->getPost('mclient') == 'on') ? 1 : 0;
-
-    // If mainClient is checked, update existing mainClient clients to 0
     if ($request->getPost('mclient') == 1) {
         $model->resetMainClients();
     }
@@ -97,11 +95,11 @@ public function saveClientProfile()
         'CNIC' => $request->getPost('CNIC'),
         'status' => $request->getPost('cstatus'),
         'Def' => $request->getPost('cdef'),
-        'idBusiness' => $businessID, // Assigning the static value 34 to businessID
+        'idBusiness' => $businessID,
         'identification_type' => $request->getPost('idType'),
         'limitExpense' => $request->getPost('expense'),
         'discount' => $request->getPost('discount'),
-        'mainClient' => $request->getPost('mclient'),
+        'mainClient' => $request->getPost('mclient') ?? 0,
         'address' => $request->getPost('address'),
         'city' => $request->getPost('city'),
         'state' => $request->getPost('state'),

@@ -24,9 +24,14 @@ class LoginController extends Controller
         $totalDoctorCount = $model->countAll();
         $data['totalDoctorCount'] = $totalDoctorCount;
 
-        // $model = new ClientModel();
-        // $totalClientCount = $model->countAll();
-        // $data['totalClientCount'] = $totalDoctorCount;
+        $session = session();
+        if (!$session->get('ID')) {
+            return redirect()->to(base_url("/login"));
+        }
+        $this->response->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+        $this->response->setHeader('Pragma', 'no-cache');
+
+
         return view('dashboard.php', $data);
     }
 
@@ -61,41 +66,6 @@ class LoginController extends Controller
         return view('add_user.php', $data);
     }
 
-
-
-
-    //     public function loginSave()
-    //     {
-    //         $request = \Config\Services::request();
-    //         $session = session();
-
-    //         $email = trim($request->getVar('email'));
-    //         $password = trim($request->getVar('password'));
-
-    //         $loginModel = new \App\Models\LoginModel('users');
-    //         $user = $loginModel->getUserByEmail($email);
-
-    //         if ($user) {
-    //             if (password_verify($password, $user['password'])) {
-    //                 $userData = [
-    //                     'fName' => $user['fName'],
-    //                     'lName' => $user['lName'],
-    //                     'email' => $user['email'],
-    //                     'profileImage' => base_url('uploads/' . $user['CNIC_img']),
-    //                 ];
-
-    //                 $session->set($userData);
-
-    //                 return redirect()->to(base_url("/dashboard"));
-    //             } else {
-    //                 $session->setFlashdata('error', 'Invalid email or password.');
-    //             }
-    //         } else {
-    //             $session->setFlashdata('error', 'User with this email does not exist.');
-    //         }
-
-    //         return redirect()->to(base_url("/login"));
-    //     }
 
     public function loginSave()
     {
@@ -146,17 +116,11 @@ class LoginController extends Controller
                     'businessName' => $businessData['businessName'],
                     'phoneNumber' => $businessData['phone'],
                     'businessProfileImage' => base_url('uploads/' . $businessData['logo']),
-                    'businessTableID' => $businessData['ID'], // Primary key of the 'business' table
-                    'businessTypeID' => $businessData['businessTypeID'], // Foreign key in the 'business' table
+                    'businessTableID' => $businessData['ID'], 
+                    'businessTypeID' => $businessData['businessTypeID'],
                 ];
 
                 $session->set($userData);
-
-
-
-
-
-
 
 
                 return redirect()->to(base_url("/dashboard"));
@@ -169,6 +133,9 @@ class LoginController extends Controller
 
         return redirect()->to(base_url("/login"));
     }
+
+    
+
 
     public function logout()
     {

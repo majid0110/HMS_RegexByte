@@ -6,19 +6,21 @@
       </button>
     </div>
     <div>
-    <a class="navbar-brand brand-logo">
-        <?php
-        $session = session();
-        if ($session->has('businessProfileImage')) {
-            echo '<img class="img-xs rounded-circle larger-profile-img" src="' . $session->get('businessProfileImage') . '" alt="Profile image">';
-        }
-        ?>
-    </a>
 </div>
 
   </div>
   <div class="navbar-menu-wrapper d-flex align-items-top">
     <ul class="navbar-nav">
+    <a class="navbar-brand brand-logo">
+    <?php
+    $session = session();
+    if ($session->has('businessProfileImage')) {
+        echo '<img class="img-xs rounded-circle larger-profile-img" style="width: 90px; height: 90px;" src="' . $session->get('businessProfileImage') . '" alt="Profile image">';
+    }
+    ?>
+</a>
+
+
       <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
         <?php
         $session = session();

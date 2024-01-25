@@ -219,7 +219,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">First Name</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="fName" />
+                            <input type="text" class="form-control" name="fName" required/>
                           </div>
                         </div>
                       </div>
@@ -227,7 +227,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Last Name</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="lName"/>
+                            <input type="text" class="form-control" name="lName" required/>
                           </div>
                         </div>
                       </div>
@@ -237,7 +237,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" name="gender">Gender</label>
                           <div class="col-sm-9">
-                            <select class="form-control" name="gender">
+                            <select class="form-control" name="gender" required/>
                               <option>Male</option>
                               <option>Female</option>
                             </select>
@@ -245,20 +245,20 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Date of Birth</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" placeholder="dd/mm/yyyy" name="dob"/>
+                      <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Date of Birth</label>
+                              <div class="col-sm-9">
+                                  <input type="date" class="form-control" name="dob" required/>
+                              </div>
                           </div>
                         </div>
-                      </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Phone Number</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="phone"/>
+                            <input type="text" class="form-control" name="phone" required/>
                           </div>
                         </div>
                       </div>
@@ -266,7 +266,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Email</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email"/>
+                            <input type="email" class="form-control" name="email" required/>
                           </div>
                         </div>
                       </div>
@@ -288,7 +288,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Medical License Number</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="MLN"/>
+                            <input type="text" class="form-control" name="MLN" required/>
                           </div>
                         </div>
                       </div>
@@ -302,7 +302,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Clinic Address</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="address"/>
+                            <input type="text" class="form-control" name="address" required/>
                           </div>
                         </div>
                       </div>
@@ -310,7 +310,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Hospital Affiliation</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="hos_af"/>
+                            <input type="text" class="form-control" name="hos_af" required/>
                           </div>
                         </div>
                       </div>
@@ -320,7 +320,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Education</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="education"/>
+                            <input type="text" class="form-control" name="education" required/>
                           </div>
                         </div>
                       </div>
@@ -328,7 +328,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Experience</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="experience"/>
+                            <input type="text" class="form-control" name="experience" required/>
                           </div>
                         </div>
                       </div>
@@ -346,7 +346,7 @@
     <div class="form-group row">
         <label class="col-sm-3 col-form-label">Profile Image</label>
         <div class="col-sm-9">
-            <input type="file" class="form-control" name="profile" accept="image/*">
+            <input type="file" class="form-control" name="profile" accept="image/*" required/>
         </div>
     </div>
 </div>
