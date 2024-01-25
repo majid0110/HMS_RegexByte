@@ -12,6 +12,8 @@ use CodeIgniter\Controller;
 class AppointmentController extends Controller
 {
 
+
+    
     //------------------------------------------------Main View 
     public function appointments_table()
     {
