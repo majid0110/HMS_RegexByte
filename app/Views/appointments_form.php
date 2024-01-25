@@ -276,7 +276,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Appointment Fee</label>
                                       <div class="col-sm-9">
-                                      <input type="text" class="form-control" name="fName" />
+                                      <input type="number" class="form-control" name="fName" />
                                       </div>
                                     </div>
                                 </div>

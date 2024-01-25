@@ -13,7 +13,7 @@ class AppointmentController extends Controller
 {
 
 
-    echo "test";
+
     //------------------------------------------------Main View 
     public function appointments_table()
     {

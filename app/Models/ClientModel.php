@@ -18,7 +18,11 @@ class ClientModel extends Model
 
         public function getclientprofile()
         {
+            $session = \Config\Services::session();
+            $businessID = $session->get('businessID');
+
             return $this->db->table('client')
+            ->where('idBusiness', $businessID)
                 ->get()
                 ->getResultArray();
         }

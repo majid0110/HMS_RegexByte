@@ -282,7 +282,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Charges </label>
                           <div class="col-sm-9">
-                            <input type="number" name="fee" class="form-control" required/>
+                            <input type="number" name="fee" class="form-control" Value="0" required/>
                           </div>
                         </div>
                       </div>

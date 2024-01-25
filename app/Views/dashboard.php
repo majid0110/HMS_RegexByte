@@ -206,7 +206,7 @@
                     <li class="nav-item">
                       <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Audiences</a>
                     </li>
                     <li class="nav-item">
@@ -214,7 +214,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
-                    </li>
+                    </li> -->
                   </ul>
                   <div>
                     <div class="btn-wrapper">
@@ -271,8 +271,8 @@
                               <div class="card-body">
                                 <div class="d-sm-flex justify-content-between align-items-start">
                                   <div>
-                                    <h4 class="card-title card-title-dash">Performance Line Chart</h4>
-                                    <h5 class="card-subtitle card-subtitle-dash">Lorem Ipsum is simply dummy text of the printing</h5>
+                                    <h4 class="card-title card-title-dash">Performance</h4>
+                                    <h5 class="card-subtitle card-subtitle-dash">Weekly Report</h5>
                                   </div>
                                   <div id="performance-line-legend"></div>
                                 </div>

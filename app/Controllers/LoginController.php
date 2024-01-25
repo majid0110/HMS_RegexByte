@@ -202,7 +202,7 @@ class LoginController extends Controller
                 'phone' => $request->getPost('user_phone'),
                 'password' => $hashedPassword,
                 'businessID' => $businessID,
-                'roleID' => 1,
+                'roleID' => 13,
                 'CNIC' => $request->getPost('cnic_number'),
                 'CNIC_img' => $nicImageName,
             ];

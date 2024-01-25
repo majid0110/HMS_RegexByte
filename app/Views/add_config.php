@@ -214,7 +214,7 @@
       <div class="media">
         <i class="ti-world icon-md text-info d-flex align-self-start me-3"></i>
         <div class="media-body">
-    <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
+    <p class="card-text">Update Business</p>
     <!-- Add the URL button here -->
     <a href="<?php echo base_url() . 'config_form/' . $session->get('businessTableID'); ?>" class="btn btn-primary">Configure Here</a>
 </div>

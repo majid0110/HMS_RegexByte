@@ -209,7 +209,7 @@
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">ADD CLIENTS</h4>
+                                <h4 class="card-title">ADD CLIENT</h4>
                                 <form class="pt-3" method="POST" action="<?php echo base_url() . "saveClientProfile"; ?>" enctype="multipart/form-data">
                                     <p class="card-description">
                                         Personal info
@@ -227,7 +227,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Client Contact</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="cphone" required/>
+                            <input type="text" class="form-control" name="cphone"/>
                           </div>
                         </div>
                       </div>
@@ -237,7 +237,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Identification Type</label>
                           <div class="col-sm-9">
-                            <select class="form-control" name ="idType" required/>
+                            <select class="form-control" name ="idType"/>
                               <option>CNIC</option>
                               <option>Passport</option>
                             </select>
@@ -248,7 +248,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Client CNIC</label>
                           <div class="col-sm-9">
-                          <input type="text" class="form-control" name="CNIC" required/>
+                          <input type="text" class="form-control" name="CNIC" />
                           </div>
                         </div>
                       </div>
@@ -259,7 +259,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" name="cemail">Client Email</label>
                           <div class="col-sm-9">
-                          <input type="text" class="form-control" name="cemail" required/>
+                          <input type="email" class="form-control" name="cemail"/>
                           </div>
                         </div>
                       </div>
@@ -284,7 +284,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Def</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" name="cdef" required/>
+                            <input type="text" class="form-control" name="cdef"/>
                           </div>
                         </div>
                       </div>
@@ -328,7 +328,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">address</label>
+                          <label class="col-sm-3 col-form-label">Address</label>
                           <div class="col-sm-9">
                             <input type="text" class="form-control" name="address"/>
                           </div>
