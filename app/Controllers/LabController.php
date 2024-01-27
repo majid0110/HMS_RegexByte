@@ -35,17 +35,16 @@ class LabController extends Controller
     {
     $request = \Config\Services::request();
     $session = \Config\Services::session();
-    $businessID = $session->get('ID');
-    $UserID = $session->get('businessID');
+    $businessID = $session->get('businessID');
+    $UserID = $session->get('ID');
 
 
     $data = [
         'title' => $request->getPost('ls_name'),
         'description' => $request->getPost('ls_description'),
         'test_fee' => $request->getPost('ls_fee'),
-        // There Is an issue, Hammad stored userID in BusinessID and BusinessID in userID
-        'userID' => $businessID, 
-        'businessID' => $UserID,
+        'userID' => $UserID, 
+        'businessID' => $businessID,
     ];
 
     $model = new LabModel();

@@ -215,6 +215,28 @@
                       Personal info
                     </p>
                     <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" name="ftype">Fee Type</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="app_type_id" id="app_type_id">
+                              <?php foreach ($fee_types as $fee_type) : ?>
+                                <option value="<?= $fee_type->f_id; ?>"><?= $fee_type->FeeType; ?></option>
+                              <?php endforeach; ?>
+                            </select>
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Fee</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="doctor_id" id="doctor_id">
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Client Name</label>
@@ -227,67 +249,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <a class="nav-link" href="<?php echo base_url() . 'clients_form'; ?>" aria-expanded="false" aria-controls="auth">
-                            <i class="menu-icon mdi mdi-account-plus "></i>
-                            <span class="menu-title">Add Client</span>
-                            <i class="menu-arrow"></i>
-                          </a>
-                        </div>
+                      
+                    </div>                      
                       </div>
-
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Doctor Name</label>
-                          <div class="col-sm-9">
-                            <select class="form-control" name="doctor_id" id="doctor_id">
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" name="ftype">Appointment Type</label>
-                          <div class="col-sm-9">
-                            <select class="form-control" name="app_type_id" id="app_type_id">
-                              <?php foreach ($fee_types as $fee_type) : ?>
-                                <option value="<?= $fee_type->f_id; ?>"><?= $fee_type->FeeType; ?></option>
-                              <?php endforeach; ?>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Appointment Fee</label>
-                            <div class="col-sm-9">
-                              <input type="number" class="form-control" name="appointmentFee" id="appointmentFee" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Appointment Date</label>
-                            <div class="col-sm-9">
-                              <input type="date" class="form-control" name="appointmentDate" value="<?= date('Y-m-d'); ?>" />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Appointment Time</label>
-                            <div class="col-sm-9">
-                              <input type="time" class="form-control" name="appointmentTime" value="<?= date('H:i'); ?>" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>                      
+                                   
                       <div class="row">
                         <div class="col-md-6">
                           <button type="submit" class="btn btn-primary">BOOK</button>

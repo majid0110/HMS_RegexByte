@@ -477,3 +477,8 @@ in APPPATH\Views\labtest_form.php on line 223.
  7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
  8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-27 12:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-27 12:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-27 12:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-27 12:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-27 12:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
