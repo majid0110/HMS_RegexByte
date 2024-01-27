@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/login', 'LoginController::show');
-$routes->post("/loginSave",'LoginController::loginSave');
+$routes->post("/loginSave", 'LoginController::loginSave');
 $routes->get('/dashboard', 'LoginController::dashboard');
 $routes->get('/logout', 'LoginController::logout');
 $routes->get('/user_form', 'LoginController::user_form');
@@ -65,5 +65,13 @@ $routes->get('/configure', 'ConfigureController::configure');
 $routes->get('/config_form/(:num)', 'ConfigureController::config_form/$1');
 $routes->post('/update/(:num)', 'ConfigureController::update/$1');
 
+$routes->post('doctor-controller/get-doctors', 'DoctorController::getDoctors', ['as' => 'get-doctors']);
+$routes->post('DoctorController/getDoctors', 'DoctorController::getDoctors');
+$routes->post('DoctorController/fetchDoctorFee', 'DoctorController::fetchDoctorFee');
 
-
+//-------------------------------------------------------------------------------------------------------------------------
+//                                                 Lab Services
+//-------------------------------------------------------------------------------------------------------------------------
+$routes->get('/labServices_form', 'LabController::labServices_form');
+$routes->post('/saveLabService', 'LabController::saveLabService');
+$routes->get('/labtest_form', 'LabController::labtest_form');

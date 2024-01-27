@@ -1,7 +1,9 @@
 <?php $session=session();?>
+<?php include 'include_common/head.php'; ?>
+<?php include 'include_common/navbar.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
     <style>
         body {
             background-color: #f8f9fa;
@@ -54,8 +56,55 @@
             background-color: #0056b3;
         }
     </style>
+</head> -->
+<head>
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="/public/assets/vendors_s/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="/public/assets/js_s/select.dataTables.min.css">
+  <link rel="stylesheet" href="../public/assets/vendors_s/feather/feather.css">
+  <link rel="stylesheet" href="../public/assets/vendors_s/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../public/assets/vendors_s/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../public/assets/vendors_s/typicons/typicons.css">
+  <link rel="stylesheet" href="../public/assets/vendors_s/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../public/assets/vendors_s/css/vendor.bundle.base.css">
+  <!-- endinject -->
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../public/assets/css_s/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../public/assets/images_s/regexbyte.png" />
 </head>
 <body>
+<div class="container-scroller">
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border me-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
+          </div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      
+<?php include 'include_common/sidebar.php'; ?>
+<div class="main-panel">
+<div class="content-wrapper">
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -125,12 +174,13 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Update</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+                                    </div>
 </div>
 </body>
 </html>

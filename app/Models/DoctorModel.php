@@ -19,7 +19,10 @@ class DoctorModel extends Model
     {
         return $this->db->table('specialization')->get()->getResultArray();
     }
-
+    public function getAllDoctors()
+    {
+        return $this->select('DoctorID, FirstName, LastName')->findAll();
+    }
 
     public function getdoctorprofile()
 {

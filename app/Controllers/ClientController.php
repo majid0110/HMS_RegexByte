@@ -75,6 +75,44 @@ class ClientController extends Controller
     //-------------------------------------------------------Main Functions
 
 
+// public function saveClientProfile()
+// {
+//     $request = \Config\Services::request();
+//     $session = \Config\Services::session();
+
+//     $model = new ClientModel();
+//     $businessID = $session->get('businessID');
+
+//     $mainClient = ($request->getPost('mclient') == 'on') ? 1 : 0;
+//     if ($request->getPost('mclient') == 1) {
+//         $model->resetMainClients();
+//     }
+
+//     $data = [
+//         'client' => $request->getPost('cName'),
+//         'contact' => $request->getPost('cphone'),
+//         'email' => $request->getPost('cemail'),
+//         'CNIC' => $request->getPost('CNIC'),
+//         'status' => $request->getPost('cstatus'),
+//         'Def' => $request->getPost('cdef'),
+//         'idBusiness' => $businessID,
+//         'identification_type' => $request->getPost('idType'),
+//         'limitExpense' => $request->getPost('expense'),
+//         'discount' => $request->getPost('discount'),
+//         'mainClient' => $request->getPost('mclient') ? 1 : 0,
+//         'address' => $request->getPost('address'),
+//         'city' => $request->getPost('city'),
+//         'state' => $request->getPost('state'),
+//         'code' => $request->getPost('code'),
+//     ];
+
+//     $model->saveClient($data);
+
+//     session()->setFlashdata('success', 'Clinet Added..!!');
+
+//     return redirect()->to(base_url("/clients_form"));
+// }
+
 public function saveClientProfile()
 {
     $request = \Config\Services::request();
@@ -82,9 +120,9 @@ public function saveClientProfile()
 
     $model = new ClientModel();
     $businessID = $session->get('businessID');
+    $mainClient = $request->getPost('mclient') ? 1 : 0;
 
-    $mainClient = ($request->getPost('mclient') == 'on') ? 1 : 0;
-    if ($request->getPost('mclient') == 1) {
+    if ($mainClient == 1) {
         $model->resetMainClients();
     }
 
@@ -99,7 +137,7 @@ public function saveClientProfile()
         'identification_type' => $request->getPost('idType'),
         'limitExpense' => $request->getPost('expense'),
         'discount' => $request->getPost('discount'),
-        'mainClient' => $request->getPost('mclient') ?? 0,
+        'mainClient' => $mainClient,
         'address' => $request->getPost('address'),
         'city' => $request->getPost('city'),
         'state' => $request->getPost('state'),
@@ -108,7 +146,7 @@ public function saveClientProfile()
 
     $model->saveClient($data);
 
-    session()->setFlashdata('success', 'Clinet Added..!!');
+    session()->setFlashdata('success', 'Client Added..!!');
 
     return redirect()->to(base_url("/clients_form"));
 }

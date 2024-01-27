@@ -312,7 +312,7 @@
                           <div class="form-group row">
                              <!-- <label class="col-sm-3 col-form-label">Main Client</label>  -->
                             <!-- <div class="col-sm-9"> -->
-                                <input type="checkbox" class="form-check-input" name="mclient" value="0" style="    margin-left: 9rem; display=flex">
+                                <input type="checkbox" class="form-check-input" name="mclient" style="    margin-left: 9rem; display=flex">
                                 <span style="margin-left: 11rem;margin-top: -19px;">Main Client</span>
                               </input>
                                 <!-- <label class="col-sm-3 col-form-label">Main Client</label>  -->

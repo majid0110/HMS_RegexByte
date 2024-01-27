@@ -4,14 +4,20 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 
+
 use App\Models\DoctorModel;
 use App\Models\ClientModel;
+
+use App\Models\AppointmentModel;
 
 
 class DoctorController extends Controller
 {
 
-//------------------------------------------- Returning View
+//-------------------------------------------------------------------------------------------------------------------------
+//                                                  Returning Basic Views
+//-------------------------------------------------------------------------------------------------------------------------
+
     public function doctors_form()
     {
         $Model = new DoctorModel();
@@ -27,7 +33,7 @@ class DoctorController extends Controller
         $data['doctorDetails'] = $model->getDoctorByID($doctorID);
         return view('edit_doctor.php', $data);
     }
-    
+
     public function deleteDoctor($doctorID)
     {
         $model = new DoctorModel();
@@ -39,7 +45,7 @@ class DoctorController extends Controller
     public function doctors_table()
     {
         $Model = new DoctorModel();
-        $data['doctorDetails'] = $Model->getdoctorprofile(); 
+        $data['doctorDetails'] = $Model->getdoctorprofile();
         return view('doctors_table.php', $data);
     }
 
@@ -52,19 +58,18 @@ class DoctorController extends Controller
         $data['doctor_names'] = $model->getDoctorNames();
         $data['fee_types'] = $model->getFeeTypes();
         return view('doctors_fee.php', $data);
-
     }
 
     public function editDoctorFee($df_id)
-{
-    $model = new DoctorModel();
-    $data['doctor_names'] = $model->getDoctorNames();
-    $data['fee_types'] = $model->getFeeTypes();
-    $data['editDoctorFee'] = $model->getDoctorFeeByID($df_id);
-    return view('edit_fee', $data);
-}
+    {
+        $model = new DoctorModel();
+        $data['doctor_names'] = $model->getDoctorNames();
+        $data['fee_types'] = $model->getFeeTypes();
+        $data['editDoctorFee'] = $model->getDoctorFeeByID($df_id);
+        return view('edit_fee', $data);
+    }
 
-public function appointments_form()
+    public function appointments_form()
     {
         $model = new DoctorModel();
         $data['doctor_names'] = $model->getDoctorNames();
@@ -73,41 +78,50 @@ public function appointments_form()
         $data['doctor_names'] = $model->getDoctorNames();
 
         $data['fee_types'] = $model->getFeeTypes();
-
+        $appmodel = new AppointmentModel();
+        $data['appointment_types'] = $appmodel->getAppointments();
         $clientModel = new ClientModel();
         $data['client_names'] = $clientModel->getClientNames();
 
-    
+
         return view('appointments_form.php', $data);
     }
 
-// public function appointments_form()
-// {
-//     $model = new DoctorModel();
+    public function getDoctors()
+    {
+        $model = new DoctorModel();
+        $doctors = $model->getAllDoctors();
 
-//     $data['doctor_names'] = $model->getDoctorNamesWithSpecialization();
-//     $data['fee_types'] = $model->getFeeTypes();
-//     $data['doctorFees'] = $model->getDoctorFees();
+        return $this->response->setJSON(['doctors' => $doctors]);
+    }
 
-//     $selectedDoctorId = $this->request->getPost('doctor_id');
-//     $doctorDetails['Specialization'] = $model->getDoctorSpecialization($selectedDoctorId);
+    public function fetchDoctorFee()
+    {
+    $doctorID = $this->request->getPost('doctorID');
+    $feeTypeID = $this->request->getPost('feeTypeID');
 
-//     $data['doctorDetails'] = $doctorDetails;
+    $model = new DoctorModel();
+    $doctorFee = $model->getDoctorFee($doctorID, $feeTypeID);
 
-//     return view('appointments_form.php', $data);
-// }
+    return $this->response->setJSON(['fee' => $doctorFee['Fee'] ?? '']);
+    }
 
 
-//-------------------------------------------------------Main Fuctions
+//-------------------------------------------------------------------------------------------------------------------------
+//                                                  Main Fuctions
+//-------------------------------------------------------------------------------------------------------------------------
 
     public function saveDoctorProfile()
     {
         $request = \Config\Services::request();
+        $session = \Config\Services::session();
+        $businessID = $session->get('businessID');
+
         var_dump($_FILES);
         $profileImage = $request->getFile('profile');
         $ProfileImageName = $profileImage->getName();
         $profileImage->move(FCPATH . 'login_ci4/uploads/', $ProfileImageName);
-        
+
         $data = [
             'FirstName' => $request->getPost('fName'),
             'LastName' => $request->getPost('lName'),
@@ -115,19 +129,17 @@ public function appointments_form()
             'DateOfBirth' => $request->getPost('dob'),
             'ContactNumber' => $request->getPost('phone'),
             'Email' => $request->getPost('email'),
-            'Specialization' => $request->getPost('specialization'), 
+            'Specialization' => $request->getPost('specialization'),
             'MedicalLicenseNumber' => $request->getPost('MLN'),
             'ClinicAddress' => $request->getPost('address'),
             'HospitalAffiliation' => $request->getPost('hos_af'),
             'Education' => $request->getPost('education'),
             'ExperienceYears' => $request->getPost('experience'),
             'Certification' => $request->getPost('certificate'),
-           // 'ProfileImageURL' => $request->getPost('profile'),
+            // 'ProfileImageURL' => $request->getPost('profile'),
             'ProfileImageURL' => $ProfileImageName,
-            'BusinessID' => $request->getPost('bid'),
+            'BusinessID' => $businessID,
         ];
-
-
 
         $Model = new DoctorModel();
         $Model->saveDoctorProfile($data);
@@ -137,7 +149,7 @@ public function appointments_form()
         return redirect()->to(base_url("/doctors_form"));
     }
 
-    
+
 
     public function updateDoctor()
     {
@@ -150,7 +162,7 @@ public function appointments_form()
             'DateOfBirth' => $request->getPost('dob'),
             'ContactNumber' => $request->getPost('phone'),
             'Email' => $request->getPost('email'),
-            'Specialization' => $request->getPost('specialization'), 
+            'Specialization' => $request->getPost('specialization'),
             'MedicalLicenseNumber' => $request->getPost('MLN'),
             'ClinicAddress' => $request->getPost('address'),
             'HospitalAffiliation' => $request->getPost('hos_af'),
@@ -158,7 +170,7 @@ public function appointments_form()
             'ExperienceYears' => $request->getPost('experience'),
             'Certification' => $request->getPost('certificate'),
             'ProfileImageURL' => $request->getPost('profile'),
-           // 'ProfileImageURL' => $businessImageName,
+            // 'ProfileImageURL' => $businessImageName,
             'BusinessID' => $request->getPost('bid'),
         ];
 
@@ -181,28 +193,23 @@ public function appointments_form()
 
         $Model->insertDoctorFee($data);
 
-        return redirect()->to(base_url("/user_form"));
+        return redirect()->to(base_url("/doctors_fee"));
     }
 
-//-----------------------------------------Edit Doctor Fee
-public function updateDoctorFee($df_id)
-{
-    $model = new DoctorModel();
+    public function updateDoctorFee($df_id)
+    {
+        $model = new DoctorModel();
 
-    if ($this->request->getMethod() === 'post') {
-        $data = [
-            'Fee' => $this->request->getPost('fee'),
-            'FeeTypeId' => $this->request->getPost('fee_type_id'),
-            'doctorId' => $this->request->getPost('doctor_id'),
-        ];
+        if ($this->request->getMethod() === 'post') {
+            $data = [
+                'Fee' => $this->request->getPost('fee'),
+                'FeeTypeId' => $this->request->getPost('fee_type_id'),
+                'doctorId' => $this->request->getPost('doctor_id'),
+            ];
 
-        $model->updateDoctorFee($df_id, $data);
+            $model->updateDoctorFee($df_id, $data);
 
-        return redirect()->to(base_url('/doctors_fee'));
+            return redirect()->to(base_url('/doctors_fee'));
+        }
     }
-
-
-
-}
-
 }

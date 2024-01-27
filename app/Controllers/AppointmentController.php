@@ -22,13 +22,28 @@ class AppointmentController extends Controller
         return view('appointments_table.php', $data);
     }
 
-    public function fetchDoctorFee($doctorID, $feeTypeID)
-    {
-    $model = new DoctorModel();
-    $doctorFee = $model->getDoctorFee($doctorID, $feeTypeID);
+    // AppointmentsController
+public function appointments_form()
+{
+    $model = new AppointmentModel();
+    
+    // Fetch appointment types
+    $data['appointment_types'] = $model->getAppointmentTypes();
 
-    return $this->response->setJSON(['fee' => $doctorFee['Fee'] ?? '']);
-    }
+    // Fetch other necessary data
+    // ...
+
+    return view('appointments_form.php', $data);
+}
+
+
+    // public function fetchDoctorFee($doctorID, $feeTypeID)
+    // {
+    // $model = new DoctorModel();
+    // $doctorFee = $model->getDoctorFee($doctorID, $feeTypeID);
+
+    // return $this->response->setJSON(['fee' => $doctorFee['Fee'] ?? '']);
+    // }
 
 
     public function deleteAppointment($appointmentID)
@@ -40,6 +55,17 @@ class AppointmentController extends Controller
         return redirect()->to(base_url("/appointments_table"));
     }
 
+    public function fetchDoctorFee()
+{
+    $doctorID = $this->request->getPost('doctorID');
+    $feeTypeID = $this->request->getPost('feeTypeID');
+
+    $model = new DoctorModel();
+    $doctorFee = $model->getDoctorFee($doctorID, $feeTypeID);
+
+    return $this->response->setJSON(['fee' => $doctorFee['Fee'] ?? '']);
+}
+
     //------------------------------------------------Functions
     public function saveAppointment()
     {
@@ -47,13 +73,15 @@ class AppointmentController extends Controller
         $doctorModel = new DoctorModel();
         $businessModel = new LoginModel("business");
 
-        $clientID = 10;
+        $clientID = $this->request->getPost('clientId');
         $doctorID = $this->request->getPost('doctor_id');
         $appointmentDate = $this->request->getPost('appointmentDate');
         $appointmentTime = $this->request->getPost('appointmentTime');
         $appointmentType = $this->request->getPost('app_type_id');
         $selectedFeeTypeID = $this->request->getPost('fee_type_id');
-        $doctorFee = $doctorModel->getDoctorFeeByDoctorAndType($doctorID, $selectedFeeTypeID);
+        $doctorFee = $this->request->getPost('appointmentFee');
+//$doctorFee = $doctorModel->getDoctorFeeByDoctorAndType($doctorID, $selectedFeeTypeID);
+
 
         $businessID = session()->get('businessID');
         $charges = $businessModel->getBusinessCharges($businessID);
@@ -63,7 +91,7 @@ class AppointmentController extends Controller
             'appointmentDate' => $appointmentDate,
             'appointmentTime' => $appointmentTime,
             'appointmentType' => $appointmentType,
-            'appointmentFee' => $doctorFee ? $doctorFee['Fee'] : 100, 
+            'appointmentFee' => $doctorFee, 
             'hospitalCharges'=>$charges,
         ];
 

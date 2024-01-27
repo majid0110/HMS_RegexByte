@@ -10,8 +10,9 @@
 
   <!-- --------------------------------------------------------- -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <!-- --------------------------------------------------------- -->
 </head>
 
@@ -197,8 +198,8 @@
       <?php include 'include_common/sidebar.php'; ?>
       <!-- partial -->
       <div class="main-panel">
-    <div class="content-wrapper">
-    <?php
+        <div class="content-wrapper">
+          <?php
           $successMessage = session()->getFlashdata('success');
           $errorMessage = session()->getFlashdata('error');
 
@@ -210,157 +211,178 @@
             echo '<div class="alert alert-danger">' . $errorMessage . '</div>';
           }
           ?>
-        <div class="row">
+          <div class="row">
             <div class="col-12 grid-margin">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">BOOK APPOINTMENT</h4>
-                        <form class="pt-3" method="POST" action="<?php echo base_url() . "saveAppointment"; ?>" enctype="multipart/form-data">
-                            <p class="card-description">
-                                Personal info
-                            </p>
-                            <div class="row">
-                              <div class="col-md-6">
-                                <div class="form-group row">
-                                  <label class="col-sm-3 col-form-label">Client Name</label>
-                                    <div class="col-sm-9">
-                                      <select class="form-control" name="clientId">
-                                        <?php foreach ($client_names as $client) : ?>
-                                          <option value="<?= $client['idClient']; ?>"><?= $client['client']; ?></option>
-                                        <?php endforeach; ?>
-                                     </select>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                       <a class="nav-link"  href="<?php echo base_url() . 'clients_form'; ?>" aria-expanded="false" aria-controls="auth">
-                                          <i class="menu-icon mdi mdi-account-plus "></i>
-                                            <span class="menu-title">Add Client</span>
-                                          <i class="menu-arrow"></i>
-                                       </a>
-                                    </div>
-                                  </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">BOOK APPOINTMENT</h4>
+                  <form class="pt-3" method="POST" action="<?php echo base_url() . "saveAppointment"; ?>" enctype="multipart/form-data">
+                    <p class="card-description">
+                      Personal info
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Client Name</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="clientId">
+                              <?php foreach ($client_names as $client) : ?>
+                                <option value="<?= $client['idClient']; ?>"><?= $client['client']; ?></option>
+                              <?php endforeach; ?>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <a class="nav-link" href="<?php echo base_url() . 'clients_form'; ?>" aria-expanded="false" aria-controls="auth">
+                            <i class="menu-icon mdi mdi-account-plus "></i>
+                            <span class="menu-title">Add Client</span>
+                            <i class="menu-arrow"></i>
+                          </a>
+                        </div>
+                      </div>
 
-                              </div>  
-                              <div class="row">
-                              <div class="col-md-6">
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" name="dname">Doctor Name</label>
-                                    <div class="col-sm-9">
-                                      <select class="form-control" name="doctor_id">
-                                        <?php foreach ($doctor_names as $doctor) : ?>
-                                            <option value="<?= $doctor['DoctorID']; ?>">
-                                            <?= $doctor['FirstName'] . ' ' . $doctor['LastName']; ?>
-                                            </option>
-                                          <?php endforeach; ?>
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" name="ftype">Appointment Type</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" name="app_type_id">
-                                                <?php foreach ($fee_types as $fee_type) : ?>
-                                                    <option value="<?= $fee_type->f_id; ?>"><?= $fee_type->FeeType; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                              <div class="row">
-                                <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Appointment Fee</label>
-                                      <div class="col-sm-9">
-                                      <input type="number" class="form-control" name="fName" />
-                                      </div>
-                                    </div>
-                                </div>
-                              </div>
-
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Appointment Date</label>
-                                        <div class="col-sm-9">
-                                            <input type="date" class="form-control" name="appointmentDate" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Appointment Time</label>
-                                        <div class="col-sm-9">
-                                            <input type="time" class="form-control" name="appointmentTime" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--  submit button -->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">BOOK</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Doctor Name</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="doctor_id" id="doctor_id">
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" name="ftype">Appointment Type</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="app_type_id" id="app_type_id">
+                              <?php foreach ($fee_types as $fee_type) : ?>
+                                <option value="<?= $fee_type->f_id; ?>"><?= $fee_type->FeeType; ?></option>
+                              <?php endforeach; ?>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Appointment Fee</label>
+                            <div class="col-sm-9">
+                              <input type="number" class="form-control" name="appointmentFee" id="appointmentFee" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Appointment Date</label>
+                            <div class="col-sm-9">
+                              <input type="date" class="form-control" name="appointmentDate" value="<?= date('Y-m-d'); ?>" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Appointment Time</label>
+                            <div class="col-sm-9">
+                              <input type="time" class="form-control" name="appointmentTime" value="<?= date('H:i'); ?>" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button type="submit" class="btn btn-primary">BOOK</button>
+                        </div>
+                      </div>
+                  </form>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- content-wrapper ends -->
-    <!-- partial:../../partials/_footer.html -->
-    <?php include 'include_common/footer.php'; ?>
-    <!-- partial -->
-</div>
-
-        
-      
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <?php include 'include_common/footer.php'; ?>
         <!-- partial -->
       </div>
-      <!-- main-panel ends -->
+      <!-- partial -->
     </div>
-    <!-- page-body-wrapper ends -->
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-    $(document).ready(function () {
-        // Trigger the following function when the doctor and fee type dropdowns change
-        $('select[name="doctor_id"], select[name="fee_type_id"]').change(function () {
-            var doctorID = $('select[name="doctor_id"]').val();
-            var feeTypeID = $('select[name="fee_type_id"]').val();
+$(document).ready(function () {
 
-            // AJAX call to fetch the fee based on the selected doctor and fee type
-            $.ajax({
-                url: "<?= site_url('appointment/fetchDoctorFee'); ?>/" + doctorID + "/" + feeTypeID,
-                type: "GET",
-                dataType: "json",
-                success: function (response) {
-                    // Set the fetched fee in the Appointment Fee field
-                    $('#appointmentFee').val(response.fee);
-                },
-                error: function (xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
+    fetchDoctors();
+
+    $('#doctor_id').change(function () {
+        updateAppointmentFee();
+    });
+
+    $('#app_type_id').change(function () {
+        updateAppointmentFee();
+    });
+
+    function updateAppointmentFee() {
+        var doctorId = $('#doctor_id').val();
+        var feeTypeId = $('#app_type_id').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '<?= site_url('DoctorController/fetchDoctorFee') ?>',
+            data: {
+                doctorID: doctorId,
+                feeTypeID: feeTypeId
+            },
+            dataType: 'json',
+            success: function (response) {
+
+                $('#appointmentFee').val(response.fee);
+            },
+            error: function (error) {
+                console.log(error);
+            }
         });
-    });
-</script>
+    }
 
-  <script>
-    // Initialize Select2 for the client name dropdown
-    $(document).ready(function() {
-        $('.select2').select2();
-    });
+    function fetchDoctors() {
+        $.ajax({
+            type: 'POST',
+            url: '<?= site_url('DoctorController/getDoctors') ?>',
+            dataType: 'json',
+            success: function (response) {
+                populateDoctors(response.doctors);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+    function populateDoctors(doctors) {
+        var doctorDropdown = $('#doctor_id');
+        doctorDropdown.empty();
+
+        doctors.forEach(function (doctor) {
+            doctorDropdown.append('<option value="' + doctor.DoctorID + '">' + doctor.FirstName + ' ' + doctor.LastName + '</option>');
+        });
+    }
+});
 </script>
+  <script>
+    $(document).ready(function() {
+      $('.select2').select2();
+    });
+  </script>
   <script src="./public/assets/vendors_s/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->

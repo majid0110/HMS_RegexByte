@@ -15,6 +15,7 @@ class AppointmentModel extends Model
         return $this->insert($data);
     }
 
+
     public function getAppointments()
     {
         return $this->db->table('appointment')
@@ -26,10 +27,17 @@ class AppointmentModel extends Model
             ->getResultArray();
     }
 
+    public function getAppointmentTypes()
+    {
+    return $this->db->table('fee_type')->get()->getResultArray();
+    }
+
+
     public function deleteAppointment($appointmentID)
     {
         return $this->where('appointmentID', $appointmentID)->delete();
     }
+
 
 
 }
