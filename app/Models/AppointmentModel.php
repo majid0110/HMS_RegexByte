@@ -38,6 +38,11 @@ class AppointmentModel extends Model
         return $this->where('appointmentID', $appointmentID)->delete();
     }
 
+    public function getAppointmentsForClient($clientId)
+    {
+        return $this->where('client_id', $clientId)->findAll();
+    }
+
 
 
 }

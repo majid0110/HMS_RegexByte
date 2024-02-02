@@ -95,13 +95,15 @@ public function appointments_form()
             'hospitalCharges'=>$charges,
         ];
 
-        $appointmentModel->saveAppointment($data);
+        $appointmentModel->saveAppointment($data); 
 
         session()->setFlashdata('success', 'Appointment Booked ...!!');
 
         return redirect()->to(base_url("/appointments_table"));
 
     }
+
+    
 
     // public function fetchDoctorFee($doctorID, $feeTypeID)
     // {

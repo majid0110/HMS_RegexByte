@@ -1,0 +1,601 @@
+INFO - 2024-01-29 04:55:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 04:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 04:58:05 --> Undefined variable $fee_types
+in APPPATH\Views\labtest_form.php on line 223.
+ 1 APPPATH\Views\labtest_form.php(223): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fee_types', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 223)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(30): view('labtest_form.php')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:07:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:42:50 --> Undefined variable $client_names
+in APPPATH\Views\labtest_form.php on line 218.
+ 1 APPPATH\Views\labtest_form.php(218): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client_names', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 218)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(30): view('labtest_form.php')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 05:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:46:56 --> Undefined variable $client_names
+in APPPATH\Views\labtest_form.php on line 217.
+ 1 APPPATH\Views\labtest_form.php(217): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client_names', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 217)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(32): view('labtest_form.php')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:47:09 --> Undefined variable $client_names
+in APPPATH\Views\labtest_form.php on line 217.
+ 1 APPPATH\Views\labtest_form.php(217): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client_names', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 217)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(32): view('labtest_form.php')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:47:38 --> Undefined variable $client_names
+in APPPATH\Views\labtest_form.php on line 217.
+ 1 APPPATH\Views\labtest_form.php(217): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client_names', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 217)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(31): view('labtest_form.php')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:47:42 --> Undefined variable $client_names
+in APPPATH\Views\labtest_form.php on line 217.
+ 1 APPPATH\Views\labtest_form.php(217): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client_names', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 217)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(31): view('labtest_form.php')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:48:01 --> Undefined variable $test_types
+in APPPATH\Views\labtest_form.php on line 226.
+ 1 APPPATH\Views\labtest_form.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $test_types', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 226)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(31): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:52:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:52:18 --> Undefined variable $test_types
+in APPPATH\Views\labtest_form.php on line 226.
+ 1 APPPATH\Views\labtest_form.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $test_types', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 226)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:56:52 --> Undefined variable $test_types
+in APPPATH\Views\labtest_form.php on line 226.
+ 1 APPPATH\Views\labtest_form.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $test_types', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 226)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:58:25 --> Undefined variable $test_types
+in APPPATH\Views\labtest_form.php on line 226.
+ 1 APPPATH\Views\labtest_form.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $test_types', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 226)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 05:58:29 --> Undefined variable $test_types
+in APPPATH\Views\labtest_form.php on line 226.
+ 1 APPPATH\Views\labtest_form.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $test_types', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 226)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 05:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:06:57 --> Undefined variable $clientName
+in APPPATH\Views\labtest_form.php on line 213.
+ 1 APPPATH\Views\labtest_form.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clientName', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 213)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:08:22 --> Undefined variable $tests
+in APPPATH\Views\labtest_form.php on line 249.
+ 1 APPPATH\Views\labtest_form.php(249): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tests', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 249)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:08:52 --> Undefined variable $appointmentDetails
+in APPPATH\Views\labtest_form.php on line 230.
+ 1 APPPATH\Views\labtest_form.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $appointmentDetails', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 230)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:09:18 --> Undefined variable $appointmentDetails
+in APPPATH\Views\labtest_form.php on line 230.
+ 1 APPPATH\Views\labtest_form.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $appointmentDetails', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 230)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:09:39 --> Undefined array key "test_name"
+in APPPATH\Views\labtest_form.php on line 251.
+ 1 APPPATH\Views\labtest_form.php(251): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "test_name"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 251)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:29:01 --> Undefined variable $test_typesaddedTests
+in APPPATH\Views\labtest_form.php on line 240.
+ 1 APPPATH\Views\labtest_form.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $test_typesaddedTests', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 240)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 06:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 06:32:18 --> Undefined variable $row
+in APPPATH\Views\labtest_form.php on line 245.
+ 1 APPPATH\Views\labtest_form.php(245): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 245)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 06:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 07:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 07:45:21 --> syntax error, unexpected token "return", expecting "function" or "const"
+in APPPATH\Controllers\LabController.php on line 87.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LabController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LabController')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\LabController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 07:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 07:45:58 --> Undefined variable $testTypes
+in APPPATH\Views\labtest_form.php on line 234.
+ 1 APPPATH\Views\labtest_form.php(234): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $testTypes', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php', 234)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Views\\labtest_form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('labtest_form.php', [], true)
+ 5 APPPATH\Controllers\LabController.php(34): view('labtest_form.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->labtest_form()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 07:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 08:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 08:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 08:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 08:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 08:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 08:24:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 09:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 09:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 09:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 09:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 09:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 09:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:01:25 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:26 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:27 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:27 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:27 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:27 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:27 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:28 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:28 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:28 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:29 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:29 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:29 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:29 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:30 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:30 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:30 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:30 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:30 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:01:31 --> Undefined array key "testTypeId"
+in APPPATH\Models\TestModel.php on line 22.
+ 1 APPPATH\Models\TestModel.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "testTypeId"', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 22)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests('3', 'Appointment 1', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:07:06 --> foreach() argument must be of type array|object, null given
+in APPPATH\Models\TestModel.php on line 20.
+ 1 APPPATH\Models\TestModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 20)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests(null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:07:35 --> foreach() argument must be of type array|object, null given
+in APPPATH\Models\TestModel.php on line 20.
+ 1 APPPATH\Models\TestModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 20)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests(null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:07:51 --> foreach() argument must be of type array|object, null given
+in APPPATH\Models\TestModel.php on line 20.
+ 1 APPPATH\Models\TestModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 20)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests(null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 10:13:07 --> foreach() argument must be of type array|object, null given
+in APPPATH\Models\TestModel.php on line 20.
+ 1 APPPATH\Models\TestModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Models\\TestModel.php', 20)
+ 2 APPPATH\Controllers\LabController.php(127): App\Models\TestModel->submitTests(null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:16:03 --> Undefined property: App\Controllers\LabController::$session
+in APPPATH\Controllers\LabController.php on line 135.
+ 1 APPPATH\Controllers\LabController.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\LabController::$session', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 135)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:16:57 --> Undefined property: App\Controllers\LabController::$session
+in APPPATH\Controllers\LabController.php on line 135.
+ 1 APPPATH\Controllers\LabController.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\LabController::$session', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 135)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:19:37 --> Undefined property: App\Controllers\LabController::$session
+in APPPATH\Controllers\LabController.php on line 134.
+ 1 APPPATH\Controllers\LabController.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\LabController::$session', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 134)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:24:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:33:33 --> Call to undefined method App\Models\LabModel::submitTests
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LabController.php(126): CodeIgniter\Model->__call('submitTests', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:34:29 --> Invalid input: $tests must be an array.
+in APPPATH\Models\TestModel.php on line 21.
+ 1 APPPATH\Controllers\LabController.php(126): App\Models\TestModel->submitTests('3', 'Appointment 2', null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:35:37 --> Invalid input: $tests must be an array.
+in APPPATH\Models\TestModel.php on line 21.
+ 1 APPPATH\Controllers\LabController.php(126): App\Models\TestModel->submitTests('3', 'Appointment 2', null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:35:55 --> Invalid input: $tests must be an array.
+in APPPATH\Models\TestModel.php on line 21.
+ 1 APPPATH\Controllers\LabController.php(126): App\Models\TestModel->submitTests('3', 'Appointment 2', null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:37:23 --> Invalid input: $tests must be an array.
+in APPPATH\Models\TestModel.php on line 21.
+ 1 APPPATH\Controllers\LabController.php(126): App\Models\TestModel->submitTests('3', 'Appointment 2', null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 10:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:39:34 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\LabController.php on line 127.
+ 1 APPPATH\Controllers\LabController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:40:09 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\LabController.php on line 127.
+ 1 APPPATH\Controllers\LabController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 10:42:55 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\LabController.php on line 127.
+ 1 APPPATH\Controllers\LabController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 10:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-29 12:02:42 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\LabController.php on line 127.
+ 1 APPPATH\Controllers\LabController.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\HMS_RegexByte\\app\\Controllers\\LabController.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LabController->submitTests()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-29 12:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-29 12:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

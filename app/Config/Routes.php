@@ -75,3 +75,11 @@ $routes->post('DoctorController/fetchDoctorFee', 'DoctorController::fetchDoctorF
 $routes->get('/labServices_form', 'LabController::labServices_form');
 $routes->post('/saveLabService', 'LabController::saveLabService');
 $routes->get('/labtest_form', 'LabController::labtest_form');
+$routes->post('/addTest', 'LabController::addTest');
+
+$routes->get('LabController/getTestTypePrice/(:num)', 'LabController::getTestTypePrice/$1');
+//$routes->post('submitTests', 'LabController::submitTests');
+$routes->post('LabController/submitTests', 'LabController::submitTests');
+$routes->post('/submitTests', 'LabController::submitTests');
+
+$routes->post('LabController/getAppointmentsForClient', 'LabController::getAppointmentsForClient');

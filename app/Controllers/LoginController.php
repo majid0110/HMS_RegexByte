@@ -118,6 +118,7 @@ class LoginController extends Controller
                     'businessProfileImage' => base_url('uploads/' . $businessData['logo']),
                     'businessTableID' => $businessData['ID'], 
                     'businessTypeID' => $businessData['businessTypeID'],
+                    'hospitalcharges' => $businessData['charges'],
                 ];
 
                 $session->set($userData);

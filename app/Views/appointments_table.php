@@ -215,8 +215,8 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Client ID</th>
-                                    <th>Doctor ID</th>
+                                    <th>Client Name</th>
+                                    <th>Doctor Name</th>
                                     <th>Appointment Date</th>
                                     <th>Appointment Time</th>
                                     <th>Appointment Type</th>
