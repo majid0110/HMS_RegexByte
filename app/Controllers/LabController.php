@@ -123,6 +123,8 @@ public function getAppointmentsForClient()
 {
     try {
         $clientId = $this->request->getPost('clientId');
+        log_message('info', 'Client ID: ' . $clientId);
+
         if (empty($clientId)) {
             throw new \Exception('Invalid client ID.');
         }
@@ -132,9 +134,11 @@ public function getAppointmentsForClient()
 
         return $this->response->setJSON(['success' => true, 'appointments' => $appointments]);
     } catch (\Exception $e) {
+        log_message('error', 'Error: ' . $e->getMessage()); 
         return $this->response->setJSON(['error' => $e->getMessage()]);
     }
 }
+
 
 // public function submitTests()
 // {
@@ -201,11 +205,11 @@ public function submitTests()
         $businessID = $session->get('businessID');
         $UserID = $session->get('ID');
         $hospitalcharges= $session->get('hospitalcharges');
-    
- foreach ($tests as $test) {
-     
-    $totalFee =+ $test['fee'];
- }
+
+        $totalFee = 0;
+        foreach ($tests as $test) {
+            $totalFee =+ $test['fee'];
+        }
 
             $data = [
             'testTypeId' => 2,

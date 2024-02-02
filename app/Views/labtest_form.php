@@ -314,14 +314,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../vendors/js/vendor.bundle.base.js"></script>
 
-
+////test
 <script>
 
         $(document).ready(function () {
         $('#clientName').change(function () {
             var clientId = $(this).val();
             updateClientDetails(clientId);
-            loadAppointments(clientId);
+            loadAppointments(clientId); 
         });
 
         function updateClientDetails() {
@@ -342,29 +342,6 @@
             calculateTotalFee();
         }
 
-//         function addTest(testType, testTypeId) {
-//     var testFee = $('#testTypeList li:contains(' + testType + ') .fee').text();
-
-//     $.ajax({
-//         method: 'POST',
-//         url: '<?= site_url('LabController/getTestTypeId') ?>', // Adjust the URL accordingly
-//         dataType: "json",
-//         data: { testType: testType },
-//         success: function (response) {
-//             if (response && response.testTypeId) {
-//                 testTypeId = response.testTypeId;
-//                 addTestRow(testType, testTypeId, testFee);
-//             } else {
-//                 console.error('Error fetching testTypeId for ' + testType);
-//             }
-//         },
-//         error: function (error) {
-//             console.error('Error fetching testTypeId:', error);
-//         }
-//     });
-
-//     calculateTotalFee();
-// }
 
         $('#testTypeList .badge-pill').mouseenter(function () {
     $(this).addClass('hover-effect');
