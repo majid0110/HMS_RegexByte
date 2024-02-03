@@ -239,14 +239,12 @@
     <label for="testType">Test Type</label>
     <ul class="list-group" id="testTypeList">
         <?php foreach ($test_types as $testType): ?>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span><?= $testType['title']; ?></span>
-                <span class="fee" contenteditable="true"><?= $testType['test_fee']; ?></span>
-                <span class="badge badge-primary badge-pill hover-effect" onclick="addTest()">ADD</span>
-                
-
-            </li>
-        <?php endforeach; ?>
+    <li class="list-group-item d-flex justify-content-between align-items-center" data-test-type-id="<?= $testType['testTypeId']; ?>">
+        <span class="title"><?= $testType['title']; ?></span>
+        <span class="fee" contenteditable="true"><?= $testType['test_fee']; ?></span>
+        <span class="badge badge-primary badge-pill hover-effect" onclick="addTest()">ADD</span>
+    </li>
+<?php endforeach; ?>
     </ul>
 </div>
 </form>
@@ -314,20 +312,67 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../vendors/js/vendor.bundle.base.js"></script>
 
-////test
+
+
 <script>
+$(document).ready(function () {
+    var initialClientId = $('#clientName').val();
+    loadAppointments(initialClientId);
 
-        $(document).ready(function () {
-        $('#clientName').change(function () {
-            var clientId = $(this).val();
-            updateClientDetails(clientId);
-            loadAppointments(clientId); 
-        });
-
-        function updateClientDetails() {
+    $('#clientName').change(function () {
+        var clientId = $(this).val();
+        updateClientDetails(clientId);
+        loadAppointments(clientId);
+    });
+        function updateClientDetails(clientId) {
             var clientName = $('#clientName option:selected').text();
             var appointment = $('#appointment option:selected').text();
             $('#clientDetails').html('Client: ' + clientName + '<br>Appointment: ' + appointment);
+        }
+
+
+function loadAppointments(clientId) {
+    $.ajax({
+        method: 'POST',
+        url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
+        dataType: "json",
+        data: {
+            clientId: clientId,
+            _cache: new Date().getTime()
+        },
+        async: false, 
+        success: function (response) {
+            console.log('Appointments Response:', response);
+
+            var appointmentDropdown = $('#appointment');
+            appointmentDropdown.empty();
+
+            if (response.success && response.appointments.length > 0) {
+                $.each(response.appointments, function (index, appointment) {
+                    appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
+                });
+
+                updateClientDetails(clientId);
+            } else {
+                appointmentDropdown.append('<option value="">No appointments available</option>');
+            }
+        },
+        error: function (error) {
+            console.error('Error loading appointments:', error);
+        }
+    });
+}
+        function addTestRow(testType, testTypeId, testFee) {
+            var newRow = '<tr><td data-test-type-id="' + testTypeId + '">' + testType + '</td>' +
+                '<td contenteditable="true" class="editable-fee">' + testFee + '</td>' +
+                '<td><button class="btn btn-danger btn-sm remove-btn" onclick="removeTestRow(this)">Remove</button></td></tr>';
+            $('#testTableBody').append(newRow);
+
+            $('#testTableBody').off('input', '.editable-fee').on('input', '.editable-fee', function () {
+                calculateTotalFee();
+            });
+
+            calculateTotalFee();
         }
 
         function addTest(testType, testTypeId) {
@@ -347,25 +392,26 @@
     $(this).addClass('hover-effect');
 });
 
-// Remove hover effect on mouseout
 $('#testTypeList .badge-pill').mouseleave(function () {
     $(this).removeClass('hover-effect');
 });
 
         $('#testTypeList .badge').click(function () {
-       // var testType = $(this).closest('li').text().trim();
-        var testType = 'test A';
-        var testTypeId = $(this).closest('li').data('test-type-id');
-        var testFee = $(this).closest('li').find('.fee').text();
+
+        // var testType = $(this).closest('li').find('span:first').text().trim();
+        // var testTypeId = $(this).closest('li').data('test-type-id');
+        // var testFee = $(this).closest('li').find('.fee').text();
+
+        var testTypeRow = $(this).closest('li');
+        var testTypeId = testTypeRow.data('test-type-id');
+        var testType = testTypeRow.find('.title').text().trim();
+        var testFee = testTypeRow.find('.fee').text();
         addTestRow(testType, testTypeId, testFee);
         calculateTotalFee();
         });
 
 function addTestRow(testType, testTypeId, testFee) {
-    // var newRow = '<tr><td data-test-type-id="' + testTypeId + '">' + testType + '</td>' +
-    //     '<td contenteditable="true" class="editable-fee">' + testFee + '</td>' +
-    //     '<td><button class="btn btn-danger btn-sm remove-btn" onclick="removeTestRow(this)">Remove</button></td></tr>';
-   
+  
        var newRow = '<tr><td data-test-type-id="' + testTypeId + '">' + testType + '</td>' +
         '<td contenteditable="true" class="editable-fee">' + testFee + '</td>' +
         '<td><button class="btn btn-danger btn-sm remove-btn" onclick="removeTestRow(this)">Remove</button></td></tr>';
@@ -427,11 +473,15 @@ function addTestRow(testType, testTypeId, testFee) {
         var fee = parseFloat($(this).find('td:eq(1)').text());
 
         tests.push({
-            labTestID: 1,
-            testTypeID: testTypeId,
-            fee: fee
+
+            testTypeId: testTypeId,
+            fee: fee,
+            appointmentId: appointmentId
+
         });
     });
+
+     console.log('Tests Array:', tests);
 
     $.ajax({
         method: 'POST',
@@ -457,35 +507,6 @@ function addTestRow(testType, testTypeId, testFee) {
 
     });
 </script>
-
-<script>
-    $(document).ready(function () {
-    function loadAppointments(clientId) {
-        $.ajax({
-            method: 'POST',
-            url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
-            dataType: "json",
-            data: { clientId: clientId },
-            success: function (response) {
-                var appointmentDropdown = $('#appointment');
-                appointmentDropdown.empty();
-
-                if (response.appointments.length > 0) {
-                    $.each(response.appointments, function (index, appointment) {
-                        appointmentDropdown.append('<option value="' + appointment.id + '">' + appointment.name + '</option>');
-                    });
-                } else {
-                    appointmentDropdown.append('<option value="">No appointments available</option>');
-                }
-            },
-            error: function (error) {
-                console.error('Error loading appointments:', error);
-            }
-        });
-    }
-});
-</script>
-
 
 
 

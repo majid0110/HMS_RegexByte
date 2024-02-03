@@ -178,19 +178,36 @@ public function getAppointmentsForClient()
 //         echo('Error' .$e->getMassage());
 //     }
 // }
-
 public function getTestTypeId()
 {
-    $testType = $this->request->getPost('testType');
-    $testTypeModel = new TestModel();
-    $testTypeInfo = $testTypeModel->where('title', $testType)->first();
+    try {
+        $testType = $this->request->getPost('testType');
+        $labModel = new LabModel();
+        $testTypeInfo = $labModel->where('title', $testType)->first();
 
-    if ($testTypeInfo) {
-        return $this->response->setJSON(['testTypeId' => $testTypeInfo['testTypeId']]);
-    } else {
-        return $this->response->setJSON(['error' => 'Test type not found.']);
+        if ($testTypeInfo) {
+            return $this->response->setJSON(['testTypeId' => $testTypeInfo['testTypeId']]);
+        } else {
+            return $this->response->setJSON(['error' => 'Test type not found.']);
+        }
+    } catch (\Exception $e) {
+        log_message('error', 'Error retrieving test type ID: ' . $e->getMessage());
+        return $this->response->setJSON(['error' => 'Error retrieving test type ID.', 'message' => $e->getMessage()]);
     }
 }
+
+// public function getTestTypeId()
+// {
+//     $testType = $this->request->getPost('testType');
+//     $testTypeModel = new TestModel();
+//     $testTypeInfo = $testTypeModel->where('title', $testType)->first();
+
+//     if ($testTypeInfo) {
+//         return $this->response->setJSON(['testTypeId' => $testTypeInfo['testTypeId']]);
+//     } else {
+//         return $this->response->setJSON(['error' => 'Test type not found.']);
+//     }
+// }
 
 public function submitTests()
 {
@@ -206,10 +223,14 @@ public function submitTests()
         $UserID = $session->get('ID');
         $hospitalcharges= $session->get('hospitalcharges');
 
+        // $totalFee = 0;
+        // foreach ($tests as $test) {
+        //     $totalFee =+ $test['fee'];
+        // }
         $totalFee = 0;
-        foreach ($tests as $test) {
-            $totalFee =+ $test['fee'];
-        }
+            foreach ($tests as $test) {
+             $totalFee += $test['fee'];
+            }
 
             $data = [
             'testTypeId' => 2,
@@ -218,7 +239,7 @@ public function submitTests()
             'businessId' => $businessID,
             'hospitalCharges' => $hospitalcharges,
             'clientId' => $clientId, 
-            'appointmentId'=>11,
+            'appointmentId'=>$appointmentId,
               ];
 
 
@@ -230,7 +251,8 @@ public function submitTests()
         foreach ($tests as $test) {
             $detailsModel->insert([
                 'labTestID' => $labtestId,
-                'testTypeID' => $test['testTypeID'],
+                'testTypeID' => $test['testTypeId'],
+              // 'testTypeID' => $testTypeId,
                 'fee' => $test['fee'],
             ]);
        }
@@ -243,5 +265,60 @@ public function submitTests()
         echo('Error' .$e->getMassage());
     }
 }
+
+
+// public function submitTests()
+// {
+//     try {
+//         $clientId = $this->request->getPost('clientId');
+//         $appointmentId = $this->request->getPost('appointmentId');
+//         $tests = $this->request->getPost('tests');
+
+//         $session = \Config\Services::session();
+//         $businessID = $session->get('businessID');
+//         $UserID = $session->get('ID');
+//         $hospitalcharges = $session->get('hospitalcharges');
+
+//         $totalFee = 0;
+//         foreach ($tests as $test) {
+//             $totalFee += $test['fee'];
+//         }
+
+//         $data = [
+//             'testTypeId' => 2,
+//             'fee' => $totalFee,
+//             'userId' => $UserID,
+//             'businessId' => $businessID,
+//             'hospitalCharges' => $hospitalcharges,
+//             'clientId' => $clientId, 
+//             'appointmentId' => $appointmentId,
+//         ];
+
+//         $labModel = new TestModel();
+//         $labtestId = $labModel->saveTest($data);
+
+//         $detailsModel = new LabtestdetailsModel();
+//         foreach ($tests as $test) {
+//             $testType = $test['testType'];
+//             $testTypeInfo = $labModel->where('title', $testType)->first();
+            
+
+//             if ($testTypeInfo) {
+//                 $testTypeId = $testTypeInfo['testTypeId'];
+//                 $detailsModel->insert([
+//                     'labTestID' => $labtestId,
+//                     'testTypeID' => $testTypeId, // Use $testTypeId here
+//                     'fee' => $test['fee'],
+//                 ]);
+//             }
+//         }
+
+//         return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully']);
+//     } catch (\Exception $e) {
+//         log_message('error', 'Error retrieving data: ' . $e->getMessage());
+//         return $this->response->setJSON(['error' => 'Error retrieving data.',  $e->getMessage()]);
+//     }
+// }
+
 
 }

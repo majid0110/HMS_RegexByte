@@ -83,3 +83,4 @@ $routes->post('LabController/submitTests', 'LabController::submitTests');
 $routes->post('/submitTests', 'LabController::submitTests');
 
 $routes->post('LabController/getAppointmentsForClient', 'LabController::getAppointmentsForClient');
+$routes->post('LabController/getTestTypeId', 'LabController::getTestTypeId');

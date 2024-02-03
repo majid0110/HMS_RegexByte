@@ -1,0 +1,42 @@
+INFO - 2024-02-03 06:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:17:47 --> Client ID: 2
+INFO - 2024-02-03 06:17:51 --> Client ID: 3
+INFO - 2024-02-03 06:17:57 --> Client ID: 4
+INFO - 2024-02-03 06:17:59 --> Client ID: 2
+INFO - 2024-02-03 06:18:01 --> Client ID: 3
+INFO - 2024-02-03 06:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:19:04 --> Client ID: 2
+INFO - 2024-02-03 06:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:19:58 --> Client ID: 2
+INFO - 2024-02-03 06:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:22:46 --> Client ID: 2
+INFO - 2024-02-03 06:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:25:29 --> Client ID: 2
+INFO - 2024-02-03 06:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:25:55 --> Client ID: 2
+INFO - 2024-02-03 06:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:26:17 --> Client ID: 2
+INFO - 2024-02-03 06:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:27:55 --> Client ID: 2
+INFO - 2024-02-03 06:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:37:32 --> Client ID: 2
+INFO - 2024-02-03 06:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-02-03 06:37:37 --> Error retrieving data: Undefined array key "testTypeID"
+INFO - 2024-02-03 06:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:38:53 --> Client ID: 2
+INFO - 2024-02-03 06:38:58 --> Client ID: 3
+INFO - 2024-02-03 06:39:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-02-03 06:39:05 --> Error retrieving data: Undefined array key "testTypeID"
+INFO - 2024-02-03 06:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:40:09 --> Client ID: 2
+INFO - 2024-02-03 06:40:11 --> Client ID: 3
+INFO - 2024-02-03 06:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-02-03 06:40:17 --> Error retrieving data: Undefined array key "testTypeID"
+INFO - 2024-02-03 06:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-03 06:43:50 --> Client ID: 2
+INFO - 2024-02-03 06:43:52 --> Client ID: 3
+INFO - 2024-02-03 06:43:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

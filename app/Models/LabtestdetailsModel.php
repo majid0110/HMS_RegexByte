@@ -7,8 +7,8 @@ use CodeIgniter\Model;
 class LabtestdetailsModel extends Model
 {
     protected $table = 'labtestdetails';
-    protected $primaryKey = 'labtestdetails_id';
-    protected $allowedFields = ['labtest_id', 'labTestID', 'testTypeID', 'fee', 'createdAT'];
+    protected $primaryKey = 'labtest_id';
+    protected $allowedFields = ['labTestID', 'testTypeID', 'fee','createdAT'];
 
     // public function savedetails($responseData)
     // {

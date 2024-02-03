@@ -40,7 +40,7 @@ class AppointmentModel extends Model
 
     public function getAppointmentsForClient($clientId)
     {
-        return $this->where('client_id', $clientId)->findAll();
+        return $this->where('clientID', $clientId)->findAll();
     }
 
 
