@@ -405,62 +405,62 @@ public function submitTests()
 //     }
 // }
 
-public function submitTests()
-{
-    $db = \Config\Database::connect();
+// public function submitTests()
+// {
+//     $db = \Config\Database::connect();
 
-    try {
-        $clientId = $this->request->getPost('clientId');
-        $appointmentId = $this->request->getPost('appointmentId');
-        $tests = $this->request->getPost('tests');
+//     try {
+//         $clientId = $this->request->getPost('clientId');
+//         $appointmentId = $this->request->getPost('appointmentId');
+//         $tests = $this->request->getPost('tests');
 
-        $session = \Config\Services::session();
-        $businessID = $session->get('businessID');
-        $UserID = $session->get('ID');
-        $hospitalcharges = $session->get('hospitalcharges');
+//         $session = \Config\Services::session();
+//         $businessID = $session->get('businessID');
+//         $UserID = $session->get('ID');
+//         $hospitalcharges = $session->get('hospitalcharges');
 
-        $totalFee = 0;
-        foreach ($tests as $test) {
-            $totalFee += $test['fee'];
-        }
-        // Start the transaction
-        $db->transBegin();
+//         $totalFee = 0;
+//         foreach ($tests as $test) {
+//             $totalFee += $test['fee'];
+//         }
+//         // Start the transaction
+//         $db->transBegin();
 
-        $data = [
-            'testTypeId' => 0,
-            'fee' => $totalFee,
-            'userId' => $UserID,
-            'businessId' => $businessID,
-            'hospitalCharges' => $hospitalcharges,
-            'clientId' => $clientId, 
-            'appointmentId' => $appointmentId,
-        ];
+//         $data = [
+//             'testTypeId' => 0,
+//             'fee' => $totalFee,
+//             'userId' => $UserID,
+//             'businessId' => $businessID,
+//             'hospitalCharges' => $hospitalcharges,
+//             'clientId' => $clientId, 
+//             'appointmentId' => $appointmentId,
+//         ];
 
-        $labModel = new TestModel();
-        $labtestId = $labModel->saveTest($data);
+//         $labModel = new TestModel();
+//         $labtestId = $labModel->saveTest($data);
 
-        $detailsModel = new LabtestdetailsModel();
-        foreach ($tests as $test) {
-            $detailsModel->insert([
-                'labTestID' => $labtestId,
-                'testTypeID' => $test['testTypeId'],
-                'fee' => $test['fee'],
-            ]);
-        }
+//         $detailsModel = new LabtestdetailsModel();
+//         foreach ($tests as $test) {
+//             $detailsModel->insert([
+//                 'labTestID' => $labtestId,
+//                 'testTypeID' => $test['testTypeId'],
+//                 'fee' => $test['fee'],
+//             ]);
+//         }
 
-        // Commit the transaction
-        $db->transCommit();
+//         // Commit the transaction
+//         $db->transCommit();
         
         
 
-        return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully']);
-    } catch (\Exception $e) {
-        // Rollback the transaction in case of an exception
-        $db->transRollback();
+//         return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully']);
+//     } catch (\Exception $e) {
+//         // Rollback the transaction in case of an exception
+//         $db->transRollback();
 
-        log_message('error', 'Error retrieving data: ' . $e->getMessage());
-        return $this->response->setJSON(['error' => 'Error retrieving data.',  $e->getMessage()]);
-    }
-}
+//         log_message('error', 'Error retrieving data: ' . $e->getMessage());
+//         return $this->response->setJSON(['error' => 'Error retrieving data.',  $e->getMessage()]);
+//     }
+// }
 
 }
