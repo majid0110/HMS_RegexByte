@@ -287,6 +287,7 @@ public function getTestTypeId()
 
 public function submitTests()
     {
+        $db = \Config\Database::connect();
         try {
             $clientId = $this->request->getPost('clientId');
             $appointmentId = $this->request->getPost('appointmentId');
@@ -301,6 +302,8 @@ public function submitTests()
             foreach ($tests as $test) {
                 $totalFee += $test['fee']; // Fix the typo in the operator, should be +=
             }
+
+            $db->transBegin();
 
             $data = [
                 'testTypeId' => 2,
@@ -334,6 +337,7 @@ public function submitTests()
                     'fee' => $test['fee'],
                 ]);
             }
+            $db->transCommit();
 
             $mpdf = new Mpdf();
             $pdfContent = view('pdf_labTest', ['data' => $data, 'detailsData' => $detailsData]);
@@ -347,6 +351,7 @@ public function submitTests()
                 'pdfContent' => base64_encode($pdfBinary),
             ]);
         } catch (\Exception $e) {
+            $db->transRollback();
             log_message('error', 'Error retrieving data: ' . $e->getMessage());
             return $this->response->setJSON(['error' => 'Error retrieving data.', 'message' => $e->getMessage()]);
         }
