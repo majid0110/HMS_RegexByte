@@ -234,10 +234,13 @@ $modulePermissions = $session->get('module_permissions'); // Assuming you store 
                 <ul class="nav flex-column sub-menu">
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('labServices_form'); ?>">Add Sevice</a>
+                        <a class="nav-link" href="<?= base_url('labServices_form'); ?>">Add Lab Test</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('labtest_form'); ?>">Add Test</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('labtest_table'); ?>">View Tests</a>
                     </li>
                     <!-- Add more sub-menu items as needed -->
                 </ul>

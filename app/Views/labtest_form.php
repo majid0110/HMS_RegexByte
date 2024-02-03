@@ -7,15 +7,17 @@
 
   <link rel="stylesheet" href="./public/assets/vendors_s/select2/select2.min.css">
   <link rel="stylesheet" href="./public/assets/vendors_s/select2-bootstrap-theme/select2-bootstrap.min.css">
-  <style>
-    .badge-pill:hover {
-      background-color: #007bff;
-      /* Change this to the desired hover background color */
-      color: #fff;
-      /* Change this to the desired hover text color */
-      cursor: pointer;
+<style>
+  .badge-pill:hover {
+    background-color: #007bff; /* Change this to the desired hover background color */
+    color: #fff; /* Change this to the desired hover text color */
+    cursor: pointer;}
+
+  #clientDetails {
+    font-weight: 750;
     }
-  </style>
+
+</style>
 </head>
 
 <body>
@@ -337,18 +339,50 @@
           }
 
 
-          function loadAppointments(clientId) {
-            $.ajax({
-              method: 'POST',
-              url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
-              dataType: "json",
-              data: {
-                clientId: clientId,
-                _cache: new Date().getTime()
-              },
-              async: false,
-              success: function(response) {
-                console.log('Appointments Response:', response);
+// function loadAppointments(clientId) {
+//     $.ajax({
+//         method: 'POST',
+//         url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
+//         dataType: "json",
+//         data: {
+//             clientId: clientId,
+//             _cache: new Date().getTime()
+//         },
+//         async: false, 
+//         success: function (response) {
+//             console.log('Appointments Response:', response);
+
+//             var appointmentDropdown = $('#appointment');
+//             appointmentDropdown.empty();
+
+//             if (response.success && response.appointments.length > 0) {
+//                 $.each(response.appointments, function (index, appointment) {
+//                     appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
+//                 });
+
+//                 updateClientDetails(clientId);
+//             } else {
+//                 appointmentDropdown.append('<option value="">No appointments available</option>');
+//             }
+//         },
+//         error: function (error) {
+//             console.error('Error loading appointments:', error);
+//         }
+//     });
+// }
+
+function loadAppointments(clientId) {
+    $.ajax({
+        method: 'POST',
+        url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
+        dataType: "json",
+        data: {
+            clientId: clientId,
+            _cache: new Date().getTime()
+        },
+        async: false,
+        success: function (response) {
+            console.log('Appointments Response:', response);
 
                 var appointmentDropdown = $('#appointment');
                 appointmentDropdown.empty();
@@ -356,20 +390,18 @@
                 if (response.success && response.appointments.length > 0) {
                   $.each(response.appointments, function(index, appointment) {
                     appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
-                  });
-
-                  updateClientDetails(clientId);
-                } else {
-                  appointmentDropdown.append('<option value="">No appointments available</option>');
-                }
-              },
-              error: function(error) {
-                console.error('Error loading appointments:', error);
-              }
-            });
-          }
-
-          function addTestRow(testType, testTypeId, testFee) {
+                });
+            } else {
+                appointmentDropdown.append('<option value="">No appointments available</option>');
+                updateClientDetails(clientId, 'No appointments available');
+            }
+        },
+        error: function (error) {
+            console.error('Error loading appointments:', error);
+        }
+    });
+}
+        function addTestRow(testType, testTypeId, testFee) {
             var newRow = '<tr><td data-test-type-id="' + testTypeId + '">' + testType + '</td>' +
               '<td contenteditable="true" class="editable-fee">' + testFee + '</td>' +
               '<td><button class="btn btn-danger btn-sm remove-btn" onclick="removeTestRow(this)">Remove</button></td></tr>';

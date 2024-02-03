@@ -21,18 +21,15 @@ class TestModel extends Model
            return $this->db->insertID();
     }
 
-    // public function submitTests()
-    // {
-    //     $clientId = $this->request->getPost('clientId');
-    //     $appointmentId = $this->request->getPost('appointmentId');
-    //     $tests = $this->request->getPost('tests');
-    //     if ($tests === null || !is_array($tests)) {
-    //         return $this->response->setJSON(['success' => false, 'error' => 'Invalid input. Tests must be an array.']);
-    //     }
-    //     $labModel = new LabModel();
-    //     foreach ($tests as $test) {
-    //         $labModel->insert($test);
-    //     }
-    //     return $this->response->setJSON(['success' => true]);
-    // }
+    
+    public function getTestsWithDetails()
+    {
+        return $this->db->table('labtest')
+            ->join('client', 'client.idClient = labtest.clientId')
+            ->join('users', 'users.ID = labtest.userId')
+            ->select('labtest.*, client.client as clientName, users.fName as userName')
+            ->get()
+            ->getResultArray();
+    }
+
 }

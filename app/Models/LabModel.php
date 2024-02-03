@@ -9,8 +9,8 @@ class LabModel extends Model
     protected $table = 'test_type';
     protected $primaryKey = 'testTypeId';
     protected $allowedFields = ['title', 'description', 'test_fee', 'userID', 'businessID', 'createdAt'];
-    protected $useTimestamps = true; 
-    protected $dateFormat = 'datetime';
+    // protected $useTimestamps = true; 
+    // protected $dateFormat = 'datetime';
 
     public function saveLabService($data)
     {
