@@ -119,6 +119,7 @@ class LoginController extends Controller
                     'businessTableID' => $businessData['ID'], 
                     'businessTypeID' => $businessData['businessTypeID'],
                     'hospitalcharges' => $businessData['charges'],
+                    'business_address' => $businessData['address'],
                 ];
 
                 $session->set($userData);

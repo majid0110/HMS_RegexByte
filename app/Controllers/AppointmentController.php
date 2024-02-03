@@ -2,11 +2,21 @@
 
 namespace App\Controllers;
 
+
+
+
 use App\Models\AppointmentModel;
 use App\Models\DoctorModel; 
 use App\Models\LoginModel;
+use APP\libraries\EscPos;
+
+// require __DIR__ . '/Config/Autoload.php';
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
+use Mike42\Escpos\Printer;
+
 
 use CodeIgniter\Controller;
+use Mpdf\Mpdf;
 
 
 class AppointmentController extends Controller
@@ -72,7 +82,7 @@ public function appointments_form()
         $appointmentModel = new AppointmentModel();
         $doctorModel = new DoctorModel();
         $businessModel = new LoginModel("business");
-
+    
         $clientID = $this->request->getPost('clientId');
         $doctorID = $this->request->getPost('doctor_id');
         $appointmentDate = $this->request->getPost('appointmentDate');
@@ -80,27 +90,56 @@ public function appointments_form()
         $appointmentType = $this->request->getPost('app_type_id');
         $selectedFeeTypeID = $this->request->getPost('fee_type_id');
         $doctorFee = $this->request->getPost('appointmentFee');
-//$doctorFee = $doctorModel->getDoctorFeeByDoctorAndType($doctorID, $selectedFeeTypeID);
-
-
+    
+        // Retrieve the appointment type name from the form data
+        $appointmentTypeName = $this->request->getPost('appointmentTypeName');
+        $clientName = $this->request->getPost('clientName');
+        $doctorName = $this->request->getPost('doctorName');
+    
         $businessID = session()->get('businessID');
         $charges = $businessModel->getBusinessCharges($businessID);
+    
         $data = [
             'clientID' => $clientID,
             'doctorID' => $doctorID,
             'appointmentDate' => $appointmentDate,
             'appointmentTime' => $appointmentTime,
             'appointmentType' => $appointmentType,
-            'appointmentFee' => $doctorFee, 
-            'hospitalCharges'=>$charges,
+            'appointmentFee' => $doctorFee,
+            'hospitalCharges' => $charges,
         ];
-
-        $appointmentModel->saveAppointment($data); 
-
-        session()->setFlashdata('success', 'Appointment Booked ...!!');
-
+   
+     
+        $dataPdf = [
+            'appointmentTypeName' => $appointmentTypeName,
+            'clientName' => $clientName,
+            'doctorName' => $doctorName,
+        ];
+      
+   
+        $this->generatePdf($dataPdf + $data); 
+    
         return redirect()->to(base_url("/appointments_table"));
+    }
+    
+ 
+    
 
+
+    private function generatePdf($data)
+    {
+       
+        $mpdf = new Mpdf();
+    
+        $pdfContent = view('pdf_template', $data);
+        $mpdf->WriteHTML($pdfContent);
+    
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: inline; filename="appointment_report_' . date('Y_m_d_H_i_s') . '.pdf"');
+        
+        echo $mpdf->Output('', 'S');
+    
+        flush();
     }
 
     

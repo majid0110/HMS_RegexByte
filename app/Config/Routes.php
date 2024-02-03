@@ -84,3 +84,13 @@ $routes->post('/submitTests', 'LabController::submitTests');
 
 $routes->post('LabController/getAppointmentsForClient', 'LabController::getAppointmentsForClient');
 $routes->post('LabController/getTestTypeId', 'LabController::getTestTypeId');
+
+
+//routes for generating pdf
+
+$routes->get('/generate_pdf', 'AppointmentController::generatePdf');
+
+$routes->post('PdfController/getDynamicDataForPdf', 'PdfController::getDynamicDataForPdf');
+$routes->get('PdfController/generatePdf', 'PdfController::generatePdf');
+
+$routes->get('/generate_testPdf', 'LabController::generatePdf');
