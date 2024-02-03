@@ -15,4 +15,15 @@ class LabtestdetailsModel extends Model
     //     //$this->db->table('labtest')->insert($data);
     //     return $this->insert($responseData);
     // }
+
+    public function getTestDetails($testId)
+{
+    return $this->db->table('labtestdetails')
+        ->join('test_type', 'test_type.testTypeId = labtestdetails.testTypeID')
+        ->where('labTestID', $testId)
+        ->select('labtestdetails.*, test_type.title as testTypeName')
+        ->get()
+        ->getResultArray();
+}
+
 }

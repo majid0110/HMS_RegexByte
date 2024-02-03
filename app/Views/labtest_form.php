@@ -11,8 +11,11 @@
   .badge-pill:hover {
     background-color: #007bff; /* Change this to the desired hover background color */
     color: #fff; /* Change this to the desired hover text color */
-    cursor: pointer;
-}
+    cursor: pointer;}
+
+  #clientDetails {
+    font-weight: 750;
+    }
 
 </style>
 </head>
@@ -331,6 +334,38 @@ $(document).ready(function () {
         }
 
 
+// function loadAppointments(clientId) {
+//     $.ajax({
+//         method: 'POST',
+//         url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
+//         dataType: "json",
+//         data: {
+//             clientId: clientId,
+//             _cache: new Date().getTime()
+//         },
+//         async: false, 
+//         success: function (response) {
+//             console.log('Appointments Response:', response);
+
+//             var appointmentDropdown = $('#appointment');
+//             appointmentDropdown.empty();
+
+//             if (response.success && response.appointments.length > 0) {
+//                 $.each(response.appointments, function (index, appointment) {
+//                     appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
+//                 });
+
+//                 updateClientDetails(clientId);
+//             } else {
+//                 appointmentDropdown.append('<option value="">No appointments available</option>');
+//             }
+//         },
+//         error: function (error) {
+//             console.error('Error loading appointments:', error);
+//         }
+//     });
+// }
+
 function loadAppointments(clientId) {
     $.ajax({
         method: 'POST',
@@ -340,7 +375,7 @@ function loadAppointments(clientId) {
             clientId: clientId,
             _cache: new Date().getTime()
         },
-        async: false, 
+        async: false,
         success: function (response) {
             console.log('Appointments Response:', response);
 
@@ -351,10 +386,9 @@ function loadAppointments(clientId) {
                 $.each(response.appointments, function (index, appointment) {
                     appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
                 });
-
-                updateClientDetails(clientId);
             } else {
                 appointmentDropdown.append('<option value="">No appointments available</option>');
+                updateClientDetails(clientId, 'No appointments available');
             }
         },
         error: function (error) {

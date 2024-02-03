@@ -43,6 +43,17 @@ class AppointmentModel extends Model
         return $this->where('clientID', $clientId)->findAll();
     }
 
+    public function getAppointmentTypeName($appointmentId)
+    {
+    return $this->db->table('appointment')
+        ->join('fee_type', 'fee_type.f_id = appointment.appointmentType')
+        ->where('appointmentID', $appointmentId)
+        ->select('fee_type.FeeType as appointmentTypeName')
+        ->get()
+        ->getRowArray();
+    }
+
+
 
 
 }
