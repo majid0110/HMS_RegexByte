@@ -30,7 +30,7 @@ class LoginModel extends Model
         elseif ($tableName === "role") {
             $this->table = "role";
             $this->primaryKey = 'ID';
-            $this->allowedFields = ['ID', 'role_name', 'role_description'];
+            $this->allowedFields = ['ID', 'role_name', 'role_description','businessID'];
         }
         elseif ($tableName === "modules") {
             $this->table = "modules";
@@ -113,6 +113,8 @@ class LoginModel extends Model
         return $this->select('ID, module_name')->findAll();
     }
 
+
+
     public function save_role($data)
     {
         $this->db->table('role')->insert($data);
@@ -126,10 +128,17 @@ class LoginModel extends Model
 
     public function getAllRoles()
     { 
-        {
-            return $this->select('ID, role_name')->findAll();
+        { 
+            $session = \Config\Services::session();
+            $businessID = $session->get('businessID');
+            return  $this->select('ID, role_name')
+            ->where('businessID', $businessID) 
+            ->findAll();
+           
         }
     }
+
+  
 
     public function getRolePermissions($roleID)
     {
@@ -138,7 +147,7 @@ class LoginModel extends Model
 
     public function getModules()
     {
-        // Assuming 'modules' is the table name
+    
         $query = $this->db->table('modules')->get();
         return $query->getResultArray();
     }
@@ -151,5 +160,28 @@ class LoginModel extends Model
             ->get()
             ->getRowArray()['charges'] ?? null;
     }
+
+    public function getuserprofile()
+    {
+        $session = \Config\Services::session();
+        $businessID = $session->get('businessID');
+
+        return $this->db->table('users')
+        ->where('businessID', $businessID)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function get_user_by_id($user_id)
+    {
+        return $this->find($user_id);
+    }
+
+    public function updateUserData($UserID, $data)
+    {
+        $this->db->table('users')->where('ID', $UserID)->update($data);
+
+    }
+    
 }
 

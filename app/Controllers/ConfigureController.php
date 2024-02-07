@@ -10,11 +10,11 @@ class ConfigureController extends Controller
 {
     public function configure()
     {
-        return view ('add_config.php');
+        return view('add_config.php');
     }
 
     public function config_form($businessTableID)
-    { 
+    {
         $model = new ConfigureModel('businesstype');
         $data['business'] = $model->getBusinessTypes();
         $configModel = new ConfigureModel('business');
@@ -29,8 +29,6 @@ class ConfigureController extends Controller
         $model = new ConfigureModel('business');
 
         $businessID = $id;
-
-        // Handle form submission (excluding image)
         $businessData = [
             'BusinessName' => $request->getPost('BusinessName'),
             'RegName' => $request->getPost('RegName'),
@@ -40,19 +38,21 @@ class ConfigureController extends Controller
             // 'businessTypeID' => $request->getPost('businessType'),
             'charges' => $request->getPost('fee'),
         ];
-    //   print_r ($businessData);
-    //   die();
-       
-        // Update business data in the database (excluding image)
+        //   print_r ($businessData);
+        //   die();
+
+
         $model->updateBusinessData($businessID, $businessData);
 
-        // Handle image upload without validation
         $nicImage = $request->getFile('image');
-        $nicImageName = $nicImage->getName(); 
-        $nicImage->move(FCPATH . 'uploads', $nicImageName);
 
-        // Update the image name in the database
-        $model->updateBusinessImage($businessID, $nicImageName);
+        if ($nicImage->isValid() && !$nicImage->hasMoved()) {
+            $nicImageName = $nicImage->getName();
+            $nicImage->move(FCPATH . 'uploads', $nicImageName);
+
+            $model->updateBusinessImage($businessID, $nicImageName);
+        }
+        session()->setFlashdata('success', 'Business data updated successfully.');
 
         return redirect()->to(base_url('/configure'));
     }

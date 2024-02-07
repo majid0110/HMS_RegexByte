@@ -191,65 +191,185 @@
       <!-- partial:../../partials/_sidebar.html -->
       <?php include 'include_common/sidebar.php'; ?>
       <!-- partial -->
-<div class="content-wrapper">
-        <div class="row">
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <?php
+          $successMessage = session()->getFlashdata('success');
+          $errorMessage = session()->getFlashdata('error');
+
+          if ($successMessage) {
+            echo '<div class="alert alert-success">' . $successMessage . '</div>';
+          }
+
+          if ($errorMessage) {
+            echo '<div class="alert alert-danger">' . $errorMessage . '</div>';
+          }
+          ?>
+          <div class="row">
             <div class="col-12 grid-margin">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Edit Doctor Fee</h4>
-                        <!-- Form for editing doctor fee -->
-                        <form class="pt-3" method="POST" action="<?= base_url('updateDoctorFee/' . $editDoctorFee['df_id']); ?>">
-                            <!-- Fee (Amount) input -->
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Fee (Amount)</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="fee" value="<?= $editDoctorFee['Fee']; ?>" />
-                                </div>
-                            </div>
-                            <!-- Doctor Name dropdown -->
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" name="dname">Doctor Name</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control" name="doctor_id">
-                                        <?php foreach ($doctor_names as $doctor) : ?>
-                                            <option value="<?= $doctor['DoctorID']; ?>" <?= ($doctor['DoctorID'] == $editDoctorFee['doctorId']) ? 'selected' : ''; ?>>
-                                                <?= $doctor['FirstName'] . ' ' . $doctor['LastName']; ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Fee Type dropdown -->
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" name="ftype">Fee Type</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control" name="fee_type_id">
-                                        <?php foreach ($fee_types as $fee_type) : ?>
-                                            <option value="<?= $fee_type->f_id; ?>" <?= ($fee_type->f_id == $editDoctorFee['FeeTypeId']) ? 'selected' : ''; ?>>
-                                                <?= $fee_type->FeeType; ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Submit button -->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                </div>
-                            </div>
-                        </form>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">ADD DOCTORS</h4>
+                  <form class="pt-3" method="POST" action="<?php echo base_url() . "saveDoctorProfile"; ?>" enctype="multipart/form-data">
+                    <p class="card-description">
+                      Personal info
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">First Name</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="fName" required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Last Name</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="lName" required />
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" name="gender">Gender</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="gender" required />
+                            <option>Male</option>
+                            <option>Female</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Date of Birth</label>
+                          <div class="col-sm-9">
+                            <input type="date" class="form-control" name="dob" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Phone Number</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="phone" required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Email</label>
+                          <div class="col-sm-9">
+                            <input type="email" class="form-control" name="email" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label name=" cat"">Specialization</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="specialization">
+                              <?php foreach ($specializations as $specialization) : ?>
+                                <option value="<?= $specialization['s_id']; ?>"><?= $specialization['specialization_N']; ?></option>
+                              <?php endforeach; ?>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Medical License Number</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="MLN" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="card-description">
+                      Other Details
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Clinic Address</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="address" required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Hospital Affiliation</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="hos_af" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Education</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="education" required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Experience</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="experience" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Certification</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="certificate" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Profile Image</label>
+                          <div class="col-sm-9">
+                            <input type="file" class="form-control" name="profile" accept="image/*" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Add a submit button -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-                
+
+
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <?php include 'include_common/footer.php'; ?>
-        
-      
+
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->

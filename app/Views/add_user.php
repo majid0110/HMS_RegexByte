@@ -212,7 +212,7 @@
                 <div class="card-body">
                   <h4 class="card-title">USER DETAILS</h4>
                   <form class="form-sample" method="post" action="<?php echo base_url() . 'save_user'; ?>" enctype="multipart/form-data">
-                    
+
                     <p class="card-description">
                       User Info
                     </p>
@@ -270,7 +270,16 @@
                         </div>
                       </div>
                     </div>
-
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Confirm Password</label>
+                          <div class="col-sm-9">
+                            <input type="password" class="form-control" name="confirm_password" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
@@ -282,7 +291,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Upload CNIC Image</label>
+                          <label class="col-sm-3 col-form-label">Profile Image</label>
                           <div class="col-sm-9">
                             <input type="file" class="form-control-file" name="cnic_image" />
                           </div>
@@ -290,22 +299,22 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                    <div class="form-group row">
-    <label class="col-sm-3 col-form-label">Role</label>
-    <div class="col-sm-9">
-        <select class="form-control" name="roleID">
-            <?php foreach ($roleName as $role) : ?>
-                <option value="<?= $role['ID']; ?>"><?= $role['role_name']; ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-</div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Role</label>
+                        <div class="col-sm-9">
+                          <select class="form-control" name="roleID">
+                            <?php foreach ($roleName as $role) : ?>
+                              <option value="<?= $role['ID']; ?>"><?= $role['role_name']; ?></option>
+                            <?php endforeach; ?>
+                          </select>
+                        </div>
+                      </div>
 
-<div class="row">
-                                        <div class="col-md-6">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
 
                   </form>
                 </div>

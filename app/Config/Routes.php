@@ -18,6 +18,10 @@ $routes->post('/save_role', 'LoginController::save_role');
 $routes->get('/user_form2', 'LoginController::user_form2');
 $routes->post('/save_user', 'LoginController::save_user');
 
+$routes->get('/users_table', 'LoginController::users_table');
+$routes->get('/edit_user/(:num)', 'LoginController::edit_user/$1');
+$routes->post('/update_user/(:num)', 'LoginController::update_user/$1');
+
 $routes->get('/doctors_form', 'DoctorController::doctors_form');
 $routes->get('/doctors_table', 'DoctorController::doctors_table');
 $routes->get('/user_form1', 'LoginController::user_form1');

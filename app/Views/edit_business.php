@@ -1,4 +1,4 @@
-<?php $session=session();?>
+<?php $session = session(); ?>
 <?php include 'include_common/head.php'; ?>
 <?php include 'include_common/navbar.php'; ?>
 <!DOCTYPE html>
@@ -57,6 +57,7 @@
         }
     </style>
 </head> -->
+
 <head>
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="/public/assets/vendors_s/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -74,8 +75,9 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="../public/assets/images_s/regexbyte.png" />
 </head>
+
 <body>
-<div class="container-scroller">
+  <div class="container-scroller">
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_settings-panel.html -->
@@ -101,88 +103,119 @@
           </div>
         </div>
       </div>
-      
-<?php include 'include_common/sidebar.php'; ?>
-<div class="main-panel">
-<div class="content-wrapper">
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <form class="form-sample" method="post" action="<?= base_url('update/' . $session->get('businessTableID')) ?>" enctype="multipart/form-data">
+
+      <?php include 'include_common/sidebar.php'; ?>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <form class="form-sample" method="post" action="<?= base_url('update/' . $session->get('businessTableID')) ?>" enctype="multipart/form-data">
                     <p class="card-description">Business Info</p>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessName">Business Name</label>
-                                <input type="text" id="businessName" name="BusinessName" class="form-control" value="<?= $businessData['businessName'] ?? ''; ?>" />
-                            </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="businessName">Business Name</label>
+                          <input type="text" id="businessName" name="BusinessName" class="form-control" value="<?= $businessData['businessName'] ?? ''; ?>" />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="regName">Reg Name</label>
-                                <input type="text" id="regName" name="RegName" class="form-control" value="<?= $businessData['regName'] ?? ''; ?>" />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="regName">Reg Name</label>
+                          <input type="text" id="regName" name="RegName" class="form-control" value="<?= $businessData['regName'] ?? ''; ?>" />
                         </div>
+                      </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="Email" class="form-control" value="<?= $businessData['email'] ?? ''; ?>" readonly />
-                            </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" name="Email" class="form-control" value="<?= $businessData['email'] ?? ''; ?>" readonly />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="Phone" class="form-control" value="<?= $businessData['phone'] ?? ''; ?>" />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="phone">Phone</label>
+                          <input type="tel" id="phone" name="Phone" class="form-control" value="<?= $businessData['phone'] ?? ''; ?>" />
                         </div>
+                      </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" id="address" name="Address" class="form-control" value="<?= $businessData['address'] ?? ''; ?>" />
-                            </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="address">Address</label>
+                          <input type="text" id="address" name="Address" class="form-control" value="<?= $businessData['address'] ?? ''; ?>" />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="businessType">Business Type</label>
-                                <select id="businessType" class="form-control" name="businessType" disabled>
-                                    <?php foreach ($business as $category) : ?>
-                                        <option value="<?= $category['ID']; ?>" <?= ($businessData['businessTypeID'] == $category['ID']) ? 'selected' : ''; ?>>
-                                            <?= $category['businessType']; ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="businessType">Business Type</label>
+                          <select id="businessType" class="form-control" name="businessType" disabled>
+                            <?php foreach ($business as $category) : ?>
+                              <option value="<?= $category['ID']; ?>" <?= ($businessData['businessTypeID'] == $category['ID']) ? 'selected' : ''; ?>>
+                                <?= $category['businessType']; ?>
+                              </option>
+                            <?php endforeach; ?>
+                          </select>
                         </div>
+                      </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="charges">Charges</label>
-                                <input type="text" id="charges" name="fee" class="form-control" value="<?= $businessData['charges'] ?? ''; ?>" />
-                            </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="charges">Charges</label>
+                          <input type="text" id="charges" name="fee" class="form-control" value="<?= $businessData['charges'] ?? ''; ?>" />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="image">Upload Image</label>
-                                <input type="file" id="image" class="form-control-file" name="image" />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="image">Upload Image</label>
+                          <input type="file" id="image" class="form-control-file" name="image" />
                         </div>
+                      </div>
                     </div>
                     <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                      <button type="submit" class="btn btn-primary">Update</button>
                     </div>
-                </form>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+        <?php include 'include_common/footer.php'; ?>
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
     </div>
-                                    </div>
-</div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../public/assets/vendors_s/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../public/assets/vendors_s/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="../public/assets/vendors_s/select2/select2.min.js"></script>
+  <script src="../public/assets/vendors_s/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../public/assets/js_s/off-canvas.js"></script>
+  <script src="../public/assets/js_s/hoverable-collapse.js"></script>
+  <script src="../public/assets/js_s/template.js"></script>
+  <script src="../public/assets/js_s/settings.js"></script>
+  <script src="../public/assets/js_s/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../public/assets/js_s/file-upload.js"></script>
+  <script src="../public/assets/js_s/typeahead.js"></script>
+  <script src="../public/assets/js_s/select2.js"></script>
+  <!-- End custom js for this page-->
+
 </body>
+
 </html>
 
 
@@ -527,4 +560,4 @@
 </body>
 
 </html>
-*/?>
+*/ ?>

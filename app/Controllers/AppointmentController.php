@@ -91,7 +91,7 @@ public function appointments_form()
         $selectedFeeTypeID = $this->request->getPost('fee_type_id');
         $doctorFee = $this->request->getPost('appointmentFee');
     
-        // Retrieve the appointment type name from the form data
+     
         $appointmentTypeName = $this->request->getPost('appointmentTypeName');
         $clientName = $this->request->getPost('clientName');
         $doctorName = $this->request->getPost('doctorName');
@@ -122,9 +122,6 @@ public function appointments_form()
         return redirect()->to(base_url("/appointments_table"));
     }
     
- 
-    
-
 
     private function generatePdf($data)
     {
@@ -144,11 +141,6 @@ public function appointments_form()
 
     
 
-    // public function fetchDoctorFee($doctorID, $feeTypeID)
-    // {
-    //     $model = new DoctorModel();
-    //     $doctorFee = $model->getDoctorFee($doctorID, $feeTypeID);
-    //     return $this->response->setJSON(['fee' => $doctorFee['Fee'] ?? '']);
-    // }
+  
 
 }

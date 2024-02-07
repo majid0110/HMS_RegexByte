@@ -234,7 +234,6 @@
                         </div>
                       </div>
 
-                      <!-- Add this hidden input field for client name -->
                       <input type="hidden" name="clientName" id="clientNameInput">
 
 
@@ -259,7 +258,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- Add this hidden input field for doctor name -->
+                   
                       <input type="hidden" name="doctorName" id="doctorNameInput">
 
                       <div class="col-md-6">
@@ -275,7 +274,6 @@
                         </div>
                       </div>
 
-                      <!-- Add this hidden input field for appointment type name -->
                       <input type="hidden" name="appointmentTypeName" id="appointmentTypeNameInput">
 
                       <div class="row">
@@ -333,16 +331,14 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Get references to the select and hidden input
+    
       var appointmentTypeSelect = document.getElementById('app_type_id');
       var appointmentTypeNameInput = document.getElementById('appointmentTypeNameInput');
 
-      // Add event listener to update hidden input on selection change
       appointmentTypeSelect.addEventListener('change', function() {
         var selectedOption = appointmentTypeSelect.options[appointmentTypeSelect.selectedIndex];
         var appointmentTypeName = selectedOption.getAttribute('data-appointment-type');
 
-        // Update the hidden input value
         appointmentTypeNameInput.value = appointmentTypeName;
       });
     });
@@ -350,16 +346,15 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Get references to the select and hidden input for client name
+
       var clientIdSelect = document.getElementById('clientId');
       var clientNameInput = document.getElementById('clientNameInput');
 
-      // Add event listener to update hidden input on selection change
+    
       clientIdSelect.addEventListener('change', function() {
         var selectedOption = clientIdSelect.options[clientIdSelect.selectedIndex];
-        var clientName = selectedOption.text; // Assuming the client name is the text content of the option
+        var clientName = selectedOption.text;
 
-        // Update the hidden input value
         clientNameInput.value = clientName;
       });
     });
@@ -367,16 +362,13 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Get references to the select and hidden input for doctor name
       var doctorIdSelect = document.getElementById('doctor_id');
       var doctorNameInput = document.getElementById('doctorNameInput');
 
-      // Add event listener to update hidden input on selection change
       doctorIdSelect.addEventListener('change', function() {
         var selectedOption = doctorIdSelect.options[doctorIdSelect.selectedIndex];
-        var doctorName = selectedOption ? selectedOption.text : ''; // Ensure selectedOption is not null
+        var doctorName = selectedOption ? selectedOption.text : ''; 
 
-        // Update the hidden input value
         doctorNameInput.value = doctorName;
       });
     });

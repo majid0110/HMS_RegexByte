@@ -5,8 +5,9 @@
 
 <head>
 
-  <link rel="stylesheet" href="./public/assets/vendors_s/select2/select2.min.css">
-  <link rel="stylesheet" href="./public/assets/vendors_s/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="./public/assets/vendors_s/select2/select2.min.css" />
+  <link rel="stylesheet" href="./public/assets/vendors_s/select2-bootstrap-theme/select2-bootstrap.min.css" />
+  
   <style>
     .badge-pill:hover {
       background-color: #007bff;
@@ -54,17 +55,14 @@
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab"
-              aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab"
-              aria-controls="chats-section">CHATS</a>
+            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
           </li>
         </ul>
         <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
-            aria-labelledby="todo-section">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
             <div class="add-items d-flex px-3 mb-0">
               <form class="form w-100">
                 <div class="form-group d-flex">
@@ -148,8 +146,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="../../images/faces/face1.jpg" alt="image"><span class="online"></span>
-                </div>
+                <div class="profile"><img src="../../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -157,8 +154,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face2.jpg" alt="image"><span class="offline"></span>
-                </div>
+                <div class="profile"><img src="../../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -169,8 +165,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face3.jpg" alt="image"><span class="online"></span>
-                </div>
+                <div class="profile"><img src="../../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -178,8 +173,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face4.jpg" alt="image"><span class="offline"></span>
-                </div>
+                <div class="profile"><img src="../../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -187,8 +181,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face5.jpg" alt="image"><span class="online"></span>
-                </div>
+                <div class="profile"><img src="../../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -196,8 +189,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face6.jpg" alt="image"><span class="online"></span>
-                </div>
+                <div class="profile"><img src="../../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -236,15 +228,12 @@
                   <p class="card-description">
                     Lab Test Services
                   </p>
-                  <form class="pt-3" method="POST" action="<?php echo base_url() . "submitTests"; ?>"
-                    enctype="multipart/form-data">
+                  <form class="pt-3" method="POST" action="<?php echo base_url() . "submitTests"; ?>" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="clientName">Client Name</label>
                       <select class="form-control" id="clientName" name="clientName">
-                        <?php foreach ($client_names as $client): ?>
-                          <option value="<?= $client['idClient']; ?>">
-                            <?= $client['client']; ?>
-                          </option>
+                        <?php foreach ($client_names as $client) : ?>
+                          <option value="<?= $client['idClient']; ?>"><?= $client['client']; ?></option>
                         <?php endforeach; ?>
                       </select>
                     </div>
@@ -259,15 +248,10 @@
                     <div class="form-group">
                       <label for="testType">Test Type</label>
                       <ul class="list-group" id="testTypeList">
-                        <?php foreach ($test_types as $testType): ?>
-                          <li class="list-group-item d-flex justify-content-between align-items-center"
-                            data-test-type-id="<?= $testType['testTypeId']; ?>">
-                            <span class="title">
-                              <?= $testType['title']; ?>
-                            </span>
-                            <span class="fee" contenteditable="true">
-                              <?= $testType['test_fee']; ?>
-                            </span>
+                        <?php foreach ($test_types as $testType) : ?>
+                          <li class="list-group-item d-flex justify-content-between align-items-center" data-test-type-id="<?= $testType['testTypeId']; ?>">
+                            <span class="title"><?= $testType['title']; ?></span>
+                            <span class="fee" contenteditable="true"><?= $testType['test_fee']; ?></span>
                             <span class="badge badge-primary badge-pill hover-effect" onclick="addTest()">ADD</span>
                           </li>
                         <?php endforeach; ?>
@@ -309,30 +293,8 @@
 
 
 
-          <!-- main-panel ends -->
-        </div>
-        <!-- page-body-wrapper ends -->
-      </div>
-      <!-- container-scroller -->
-      <!-- plugins:js -->
-      <script src="../../vendors/js/vendor.bundle.base.js"></script>
-      <!-- endinject -->
-      <!-- Plugin js for this page -->
-      <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
-      <script src="../../vendors/select2/select2.min.js"></script>
-      <script src="../../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-      <!-- End plugin js for this page -->
-      <!-- inject:js -->
-      <script src="../../js/off-canvas.js"></script>
-      <script src="../../js/hoverable-collapse.js"></script>
-      <script src="../../js/template.js"></script>
-      <script src="../../js/settings.js"></script>
-      <script src="../../js/todolist.js"></script>
-      <!-- endinject -->
-      <!-- Custom js for this page-->
-      <script src="../../js/file-upload.js"></script>
-      <script src="../../js/typeahead.js"></script>
-      <script src="../../js/select2.js"></script>
+
+
       <!-- End custom js for this page-->
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -341,11 +303,11 @@
 
 
       <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
           var initialClientId = $('#clientName').val();
           loadAppointments(initialClientId);
 
-          $('#clientName').change(function () {
+          $('#clientName').change(function() {
             var clientId = $(this).val();
             updateClientDetails(clientId);
             loadAppointments(clientId);
@@ -358,38 +320,6 @@
           }
 
 
-          // function loadAppointments(clientId) {
-          //     $.ajax({
-          //         method: 'POST',
-          //         url: '<?= site_url('LabController/getAppointmentsForClient') ?>',
-          //         dataType: "json",
-          //         data: {
-          //             clientId: clientId,
-          //             _cache: new Date().getTime()
-          //         },
-          //         async: false, 
-          //         success: function (response) {
-          //             console.log('Appointments Response:', response);
-
-          //             var appointmentDropdown = $('#appointment');
-          //             appointmentDropdown.empty();
-
-          //             if (response.success && response.appointments.length > 0) {
-          //                 $.each(response.appointments, function (index, appointment) {
-          //                     appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
-          //                 });
-
-          //                 updateClientDetails(clientId);
-          //             } else {
-          //                 appointmentDropdown.append('<option value="">No appointments available</option>');
-          //             }
-          //         },
-          //         error: function (error) {
-          //             console.error('Error loading appointments:', error);
-          //         }
-          //     });
-          // }
-
           function loadAppointments(clientId) {
             $.ajax({
               method: 'POST',
@@ -400,14 +330,14 @@
                 _cache: new Date().getTime()
               },
               async: false,
-              success: function (response) {
+              success: function(response) {
                 console.log('Appointments Response:', response);
 
                 var appointmentDropdown = $('#appointment');
                 appointmentDropdown.empty();
 
                 if (response.success && response.appointments.length > 0) {
-                  $.each(response.appointments, function (index, appointment) {
+                  $.each(response.appointments, function(index, appointment) {
                     appointmentDropdown.append('<option value="' + appointment.appointmentID + '">' + appointment.appointmentID + '</option>');
                   });
                 } else {
@@ -415,23 +345,27 @@
                   updateClientDetails(clientId, 'No appointments available');
                 }
               },
-              error: function (error) {
+              error: function(error) {
                 console.error('Error loading appointments:', error);
               }
             });
           }
+
           function addTestRow(testType, testTypeId, testFee) {
             var newRow = '<tr><td data-test-type-id="' + testTypeId + '">' + testType + '</td>' +
               '<td contenteditable="true" class="editable-fee">' + testFee + '</td>' +
               '<td><button class="btn btn-danger btn-sm remove-btn" onclick="removeTestRow(this)">Remove</button></td></tr>';
             $('#testTableBody').append(newRow);
 
-            $('#testTableBody').off('input', '.editable-fee').on('input', '.editable-fee', function () {
+            $('#testTableBody').off('input', '.editable-fee').on('input', '.editable-fee', function() {
               calculateTotalFee();
             });
 
             calculateTotalFee();
           }
+
+
+
 
           function addTest(testType, testTypeId) {
             var testFee = $('#testTypeList li:contains(' + testType + ') .fee').text();
@@ -446,15 +380,15 @@
           }
 
 
-          $('#testTypeList .badge-pill').mouseenter(function () {
+          $('#testTypeList .badge-pill').mouseenter(function() {
             $(this).addClass('hover-effect');
           });
 
-          $('#testTypeList .badge-pill').mouseleave(function () {
+          $('#testTypeList .badge-pill').mouseleave(function() {
             $(this).removeClass('hover-effect');
           });
 
-          $('#testTypeList .badge').click(function () {
+          $('#testTypeList .badge').click(function() {
 
             // var testType = $(this).closest('li').find('span:first').text().trim();
             // var testTypeId = $(this).closest('li').data('test-type-id');
@@ -475,14 +409,14 @@
               '<td><button class="btn btn-danger btn-sm remove-btn" onclick="removeTestRow(this)">Remove</button></td></tr>';
             $('#testTableBody').append(newRow);
 
-            $('#testTableBody').off('input', '.editable-fee').on('input', '.editable-fee', function () {
+            $('#testTableBody').off('input', '.editable-fee').on('input', '.editable-fee', function() {
               calculateTotalFee();
             });
 
             calculateTotalFee();
           }
 
-          $('#testTableBody').on('click', '.remove-btn', function () {
+          $('#testTableBody').on('click', '.remove-btn', function() {
             var row = $(this).closest('tr');
             var testFee = parseFloat(row.find('td:eq(1)').text());
             row.remove();
@@ -494,7 +428,7 @@
           function calculateTotalFee() {
             var totalFee = 0;
 
-            $('#testTableBody tr').each(function () {
+            $('#testTableBody tr').each(function() {
               var fee = parseFloat($(this).find('td:eq(1)').text());
               if (!isNaN(fee)) {
                 totalFee += fee;
@@ -504,70 +438,14 @@
             $('#totalFee').text(totalFee.toFixed(2));
           }
 
-          $('#insertBtn').click(function () {
+          $('#insertBtn').click(function() {
             insertData();
           });
 
 
-
-          //   function insertData() {
-          //     var clientId = $('#clientName').val();
-          //     var appointmentId = $('#appointment').val();
-          //     var totalFee = parseFloat($('#totalFee').text());
-
-          //     console.log('Client ID:', clientId);
-          //     console.log('Appointment ID:', appointmentId);
-          //     console.log('Total Fee:', totalFee);
-
-          //     if (!clientId || isNaN(totalFee)) {
-          //       alert('Invalid data for insertion.');
-          //       return;
-          //     }
-
-          //     var tests = [];
-
-          //     $('#testTableBody tr').each(function() {
-          //       var testTypeId = $(this).find('td:eq(0)').data('test-type-id');
-          //       var fee = parseFloat($(this).find('td:eq(1)').text());
-
-          //       tests.push({
-
-          //         testTypeId: testTypeId,
-          //         fee: fee,
-          //         appointmentId: appointmentId
-
-          //       });
-          //     });
-
-          //     console.log('Tests Array:', tests);
-
-          //     $.ajax({
-          //       method: 'POST',
-          //       url: '<?= site_url('LabController/submitTests') ?>',
-          //       dataType: "json",
-          //       data: {
-          //         clientId: clientId,
-          //         appointmentId: appointmentId,
-          //         totalFee: totalFee,
-          //         tests: tests
-          //       },
-          //       success: function(response) {
-          //         alert('Data inserted successfully!');
-          //         console.log('Data inserted successfully:', response);
-          //         $('#testTableBody').empty();
-          //         $('#totalFee').text('0');
-          //       },
-          //       error: function(error) {
-          //         console.error('Error inserting data:', error);
-          //       }
-          //     });
-          //   }
-
-          //  });
-
-
           function insertData() {
             var clientId = $('#clientName').val();
+            var clientName = $('#clientName option:selected').text(); // Add this line
             var appointmentId = $('#appointment').val();
             var totalFee = parseFloat($('#totalFee').text());
 
@@ -584,17 +462,18 @@
 
             var tests = [];
 
-            $('#testTableBody tr').each(function () {
+            $('#testTableBody tr').each(function() {
               var testTypeId = $(this).find('td:eq(0)').data('test-type-id');
+              var testName = $(this).find('td:eq(0)').text();
               var fee = parseFloat($(this).find('td:eq(1)').text());
 
               tests.push({
                 testTypeId: testTypeId,
+                testName: testName,
                 fee: fee,
                 appointmentId: appointmentId
               });
             });
-
 
 
             $.ajax({
@@ -603,11 +482,12 @@
               dataType: "json",
               data: {
                 clientId: clientId,
+                clientName: clientName,
                 appointmentId: appointmentId,
                 totalFee: totalFee,
                 tests: tests
               },
-              success: function (response) {
+              success: function(response) {
                 console.log('Data inserted successfully:', response);
 
                 // Check if PDF content is present
@@ -616,7 +496,7 @@
                   var decodedPdfContent = atob(response.pdfContent);
 
                   // Create a Blob from the decoded PDF content
-                  var blob = new Blob([new Uint8Array(decodedPdfContent.split('').map(function (c) {
+                  var blob = new Blob([new Uint8Array(decodedPdfContent.split('').map(function(c) {
                     return c.charCodeAt(0);
                   }))], {
                     type: 'application/pdf'
@@ -635,20 +515,47 @@
               },
 
 
-              error: function (error) {
+              error: function(error) {
                 console.error('Error inserting data:', error);
               }
             });
           }
         });
-
       </script>
 
 
+<?php include 'include_common/footer.php'; ?>
 
 
-</body>
+<!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="./public/assets/vendors_s/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="./public/assets/vendors_s/typeahead.js/typeahead.bundle.min.js"></script>
+<script src="./public/assets/vendors_s/select2/select2.min.js"></script>
+<script src="./public/assets/vendors_s/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="./public/assets/js_s/off-canvas.js"></script>
+<script src="./public/assets/js_s/hoverable-collapse.js"></script>
+<script src="./public/assets/js_s/template.js"></script>
+<script src="./public/assets/js_s/settings.js"></script>
+<script src="./public/assets/js_s/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="./public/assets/js_s/file-upload.js"></script>
+<script src="./public/assets/js_s/typeahead.js"></script>
+<script src="./public/assets/js_s/select2.js"></script>
+<!-- End custom js for this page-->
 
+      </body>
 
 <!-- Mirrored from demo.bootstrapdash.com/star-admin2-free/template/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Jan 2024 05:42:34 GMT -->
 

@@ -67,6 +67,23 @@ class LoginController extends Controller
     }
 
 
+    public function users_table()
+    {
+        $model = new LoginModel('users');
+        $data['userDetails'] = $model->getuserprofile(); 
+        return view('users_table.php', $data);
+    }
+
+    public function edit_user($user_id) {
+        $model = new LoginModel('users');
+        $data['userData'] = $model->get_user_by_id($user_id);
+        $Model = new LoginModel('role');
+        $data['roleName'] = $Model->getAllRoles('role');
+        return view('edit_user.php', $data);
+    }
+    
+    
+
     public function loginSave()
     {
         $request = \Config\Services::request();
@@ -84,13 +101,9 @@ class LoginController extends Controller
                 $businessModel = new LoginModel('business');
                 $businessData = $businessModel->getBusinessData($user['businessID']);
                 $rolePermissionsModel = new LoginModel('role_permissions');
-                // Retrieve modules
-                $modules = $rolePermissionsModel->getModules();
-                // Retrieve user role permissions
                 $userRolePermissions = $rolePermissionsModel->getRolePermissions($user['roleID']);
+                $modules = $rolePermissionsModel->getModules();
                 
-
-                // Build module permissions array
                 $modulePermissions = [];
                 foreach ($userRolePermissions as $permission) {
                     $modulePermissions[$permission['moduleID']] = [
@@ -104,7 +117,7 @@ class LoginController extends Controller
                 $userData = [
                     'user_permissions' => $userRolePermissions,
                     'module_permissions' => $modulePermissions,
-                    'modules' => $modules, // Include modules in session data
+                    'modules' => $modules, 
 
                     'ID' => $user['ID'],
                     'businessID' => $user['businessID'],
@@ -155,6 +168,7 @@ class LoginController extends Controller
     public function store()
     {
         $request = \Config\Services::request();
+        $db = \Config\Database::connect();
 
         $nicImage = $request->getFile('cnic_image');
         $nicImageName = $nicImage->getName();
@@ -163,6 +177,8 @@ class LoginController extends Controller
         $businessImage = $request->getFile('image');
         $businessImageName = $businessImage->getName();
         $businessImage->move(FCPATH . 'uploads', $businessImageName);
+
+        $db->transBegin();
 
         $businessData = [
             'businessName' => $request->getPost('BusinessName'),
@@ -212,10 +228,13 @@ class LoginController extends Controller
 
             $userModel = new LoginModel('users');
             $userModel->saveUser($userData);
+
+            $db->transCommit();
             session()->setFlashdata('success', 'Data inserted successfully.');
 
             return redirect()->to(base_url("/user_form"));
         } else {
+            $db->transRollback();
             session()->setFlashdata('error', 'Error inserting data. Please try again.');
 
             return redirect()->back();
@@ -244,15 +263,20 @@ class LoginController extends Controller
 
     public function save_role()
     {
+        $db = \Config\Database::connect();
         $request = service('request');
         $roleTitle = $request->getPost('role_title');
         $roleDescription = $request->getPost('role_description');
         $modulePermissions = $request->getPost('module_permissions');
+        $session = session();
+        $businessID = $session->get('businessID');
 
+        $db->transBegin();
 
         $data = [
             'role_name' => $roleTitle,
             'role_description' => $roleDescription,
+            'businessID'=>      $businessID,
         ];
 
         $rolesModel = new LoginModel('role');
@@ -276,10 +300,13 @@ class LoginController extends Controller
             $permissionModel = new LoginModel('role_permissions');
             $permissionModel->saveRolePermissions($permissionsData);
 
+            
+            $db->transCommit();
             session()->setFlashdata('success', 'Data inserted successfully.');
 
             return redirect()->to(base_url("/role_form"));
         } else {
+            $db->transRollback();
             session()->setFlashdata('error', 'Error inserting data. Please try again.');
 
             return redirect()->back();
@@ -292,8 +319,34 @@ class LoginController extends Controller
         $session = \Config\Services::session();
 
         $nicImage = $request->getFile('cnic_image');
-        $nicImageName = $nicImage->getName();
-        $nicImage->move(FCPATH . 'uploads', $nicImageName);
+        $email = $request->getPost('user_email');
+        $userModel = new LoginModel('users');
+        $existingUser = $userModel->where('email', $email)->first();
+    
+        if ($existingUser) {
+        
+            session()->setFlashdata('error', 'Email already exists. Please choose a different email.');
+            return redirect()->to(base_url("/user_form2"));
+        }
+    
+        
+        if ($nicImage->isValid()) {
+            $nicImageName = $nicImage->getName();
+            $nicImage->move(FCPATH . 'uploads', $nicImageName);
+        } else {
+          
+            $nicImageName = 'default_image/user-png-icon-16.jpg';
+        }
+
+     
+  
+        $password = $request->getPost('user_password');
+        $confirmPassword = $request->getPost('confirm_password');
+    
+        if ($password !== $confirmPassword) {
+            session()->setFlashdata('error', 'Password and Confirm Password  not matching.');
+            return redirect()->to(base_url("/user_form2")); 
+        }
 
         $businessID = $session->get('businessID');
 
@@ -318,5 +371,33 @@ class LoginController extends Controller
         session()->setFlashdata('success', 'User Data inserted successfully.');
 
         return redirect()->to(base_url("/user_form2"));
+    }
+
+
+    public function update_user($id)
+    {
+        $request = \Config\Services::request();
+        $model = new LoginModel('users');
+
+        $UserID = $id;
+        $userData = [
+            'fName' => $request->getPost('first_name'),
+            'lName' => $request->getPost('last_name'),
+            'email' => $request->getPost('user_email'),
+            'address' => $request->getPost('user_address'),
+            'phone' => $request->getPost('user_phone'),
+            'roleID' => $request->getPost('roleID'),
+            'CNIC' => $request->getPost('cnic_number'),
+            
+        ];
+    //   print_r ($businessData);
+    //   die();
+       
+       
+        $model->updateUserData($UserID, $userData);
+
+        session()->setFlashdata('success', 'User updated successfully');
+
+        return redirect()->to(base_url('/users_table'));
     }
 }
