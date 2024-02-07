@@ -10,7 +10,7 @@ use App\Models\ClientModel;
 use App\Models\AppointmentModel;
 use App\Models\TestModel;
 use App\Models\LabtestdetailsModel;
-use Mpdf\Mpdf;
+
 
 class LabController extends Controller
 {
@@ -96,8 +96,8 @@ public function addTest()
                 $data = [
                     'testTypeId' => $test['testTypeId'],
                     'fee' => $test['testFee'],
-                    'userId' => 1, // Replace with your user ID
-                    'businessId' => 1, // Replace with your business ID
+                    'userId' => 1, 
+                    'businessId' => 1, 
                     'hospitalCharges' => $this->request->getPost('hospitalCharges'),
                     'clientId' => $clientId,
                     'appointmentId' => $appointmentId,
@@ -223,7 +223,18 @@ public function getTestTypeId()
 //     }
 // }
 
-//1111111111111111111111111111111111111111111111111111111111111111111
+public function getAppointmentTypeName($appointmentId)
+{
+    $appointmentModel = new AppointmentModel();
+    $appointmentType = $appointmentModel->getAppointmentTypeName($appointmentId);
+
+    if ($appointmentType) {
+        return $this->response->setJSON(['appointmentTypeName' => $appointmentType]);
+    } else {
+        return $this->response->setStatusCode(404)->setJSON(['error' => 'Appointment type not found.']);
+    }
+}
+
 
 // public function submitTests()
 // {
@@ -239,10 +250,6 @@ public function getTestTypeId()
 //         $UserID = $session->get('ID');
 //         $hospitalcharges= $session->get('hospitalcharges');
 
-//         // $totalFee = 0;
-//         // foreach ($tests as $test) {
-//         //     $totalFee =+ $test['fee'];
-//         // }
 //         $totalFee = 0;
 //             foreach ($tests as $test) {
 //              $totalFee += $test['fee'];
@@ -268,7 +275,7 @@ public function getTestTypeId()
 //             $detailsModel->insert([
 //                 'labTestID' => $labtestId,
 //                 'testTypeID' => $test['testTypeId'],
-//               // 'testTypeID' => $testTypeId,
+
 //                 'fee' => $test['fee'],
 //             ]);
 //        }
@@ -281,191 +288,63 @@ public function getTestTypeId()
 //         echo('Error' .$e->getMassage());
 //     }
 // }
-
-//22222222222222222222222222222222222222222222222222222222
-
 
 public function submitTests()
-    {
-        $db = \Config\Database::connect();
-        try {
-            $clientId = $this->request->getPost('clientId');
-            $appointmentId = $this->request->getPost('appointmentId');
-            $tests = $this->request->getPost('tests');
+{
+    $db = \Config\Database::connect();
 
-            $session = \Config\Services::session();
-            $businessID = $session->get('businessID');
-            $UserID = $session->get('ID');
-            $hospitalcharges = $session->get('hospitalcharges');
+    try {
+        $clientId = $this->request->getPost('clientId');
+        $appointmentId = $this->request->getPost('appointmentId');
+        $tests = $this->request->getPost('tests');
 
-            $totalFee = 0;
-            foreach ($tests as $test) {
-                $totalFee += $test['fee']; // Fix the typo in the operator, should be +=
-            }
+        $session = \Config\Services::session();
+        $businessID = $session->get('businessID');
+        $UserID = $session->get('ID');
+        $hospitalcharges = $session->get('hospitalcharges');
 
-            $db->transBegin();
-
-            $data = [
-                'testTypeId' => 2,
-                'fee' => $totalFee,
-                'userId' => $UserID,
-                'businessId' => $businessID,
-                'hospitalCharges' => $hospitalcharges,
-                'clientId' => $clientId,
-                'appointmentId' => $appointmentId,
-            ];
-
-            $labModel = new TestModel();
-            $labtestId = $labModel->saveTest($data);
-
-
-
-
-            $detailsModel = new LabtestdetailsModel();
-            $detailsData = [];
-
-            foreach ($tests as $test) {
-                $detailsData[] = [
-                    'labTestID' => $labtestId,
-                    'testTypeID' => $test['testTypeId'],
-                    'fee' => $test['fee'],
-                ];
-
-                $detailsModel->insert([
-                    'labTestID' => $labtestId,
-                    'testTypeID' => $test['testTypeId'],
-                    'fee' => $test['fee'],
-                ]);
-            }
-            $db->transCommit();
-
-            $mpdf = new Mpdf();
-            $pdfContent = view('pdf_labTest', ['data' => $data, 'detailsData' => $detailsData]);
-            $mpdf->WriteHTML($pdfContent);
-            
-            $pdfBinary = $mpdf->Output('', 'S');
-
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Data inserted successfully',
-                'pdfContent' => base64_encode($pdfBinary),
-            ]);
-        } catch (\Exception $e) {
-            $db->transRollback();
-            log_message('error', 'Error retrieving data: ' . $e->getMessage());
-            return $this->response->setJSON(['error' => 'Error retrieving data.', 'message' => $e->getMessage()]);
+        $totalFee = 0;
+        foreach ($tests as $test) {
+            $totalFee += $test['fee'];
         }
+        // Start the transaction
+        $db->transBegin();
+
+        $data = [
+            'testTypeId' => 0,
+            'fee' => $totalFee,
+            'userId' => $UserID,
+            'businessId' => $businessID,
+            'hospitalCharges' => $hospitalcharges,
+            'clientId' => $clientId, 
+            'appointmentId' => $appointmentId,
+        ];
+
+        $labModel = new TestModel();
+        $labtestId = $labModel->saveTest($data);
+
+        $detailsModel = new LabtestdetailsModel();
+        foreach ($tests as $test) {
+            $detailsModel->insert([
+                'labTestID' => $labtestId,
+                'testTypeID' => $test['testTypeId'],
+                'fee' => $test['fee'],
+            ]);
+        }
+
+        // Commit the transaction
+        $db->transCommit();
+        
+        
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully']);
+    } catch (\Exception $e) {
+        // Rollback the transaction in case of an exception
+        $db->transRollback();
+
+        log_message('error', 'Error retrieving data: ' . $e->getMessage());
+        return $this->response->setJSON(['error' => 'Error retrieving data.',  $e->getMessage()]);
     }
-
-// public function submitTests()
-// {
-//         try{
-//         $clientId = $this->request->getPost('clientId');
-//         $appointmentId = $this->request->getPost('appointmentId');
-//        // $totalFee = $this->request->getPost('totalFee');
-//         $tests = $this->request->getPost('tests');
-
-
-//         $session = \Config\Services::session();
-//         $businessID = $session->get('businessID');
-//         $UserID = $session->get('ID');
-//         $hospitalcharges= $session->get('hospitalcharges');
-
-//         $totalFee = 0;
-//             foreach ($tests as $test) {
-//              $totalFee += $test['fee'];
-//             }
-
-//             $data = [
-//             'testTypeId' => 0,
-//             'fee' => $totalFee,
-//             'userId' => $UserID,
-//             'businessId' => $businessID,
-//             'hospitalCharges' => $hospitalcharges,
-//             'clientId' => $clientId, 
-//             'appointmentId'=>$appointmentId,
-//               ];
-
-
-//          $labModel = new TestModel();
-//         $labtestId= $labModel->saveTest($data);
-
-
-//         $detailsModel = new LabtestdetailsModel();
-//         foreach ($tests as $test) {
-//             $detailsModel->insert([
-//                 'labTestID' => $labtestId,
-//                 'testTypeID' => $test['testTypeId'],
-
-//                 'fee' => $test['fee'],
-//             ]);
-//        }
-
-//     return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully']);
-//     }catch (\Exception $e) {
-//          log_message('error', 'Error retrieving data: ' . $e->getMessage());
-//          return $this->response->setJSON(['error' => 'Error retrieving data.',  $e->getMessage()]);
-
-//         echo('Error' .$e->getMassage());
-//     }
-// }
-
-// public function submitTests()
-// {
-//     $db = \Config\Database::connect();
-
-//     try {
-//         $clientId = $this->request->getPost('clientId');
-//         $appointmentId = $this->request->getPost('appointmentId');
-//         $tests = $this->request->getPost('tests');
-
-//         $session = \Config\Services::session();
-//         $businessID = $session->get('businessID');
-//         $UserID = $session->get('ID');
-//         $hospitalcharges = $session->get('hospitalcharges');
-
-//         $totalFee = 0;
-//         foreach ($tests as $test) {
-//             $totalFee += $test['fee'];
-//         }
-//         // Start the transaction
-//         $db->transBegin();
-
-//         $data = [
-//             'testTypeId' => 0,
-//             'fee' => $totalFee,
-//             'userId' => $UserID,
-//             'businessId' => $businessID,
-//             'hospitalCharges' => $hospitalcharges,
-//             'clientId' => $clientId, 
-//             'appointmentId' => $appointmentId,
-//         ];
-
-//         $labModel = new TestModel();
-//         $labtestId = $labModel->saveTest($data);
-
-//         $detailsModel = new LabtestdetailsModel();
-//         foreach ($tests as $test) {
-//             $detailsModel->insert([
-//                 'labTestID' => $labtestId,
-//                 'testTypeID' => $test['testTypeId'],
-//                 'fee' => $test['fee'],
-//             ]);
-//         }
-
-//         // Commit the transaction
-//         $db->transCommit();
-        
-        
-
-//         return $this->response->setJSON(['status' => 'success', 'message' => 'Data inserted successfully']);
-//     } catch (\Exception $e) {
-//         // Rollback the transaction in case of an exception
-//         $db->transRollback();
-
-//         log_message('error', 'Error retrieving data: ' . $e->getMessage());
-//         return $this->response->setJSON(['error' => 'Error retrieving data.',  $e->getMessage()]);
-//     }
-// }
+}
 
 }

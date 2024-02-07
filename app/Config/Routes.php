@@ -97,3 +97,17 @@ $routes->post('PdfController/getDynamicDataForPdf', 'PdfController::getDynamicDa
 $routes->get('PdfController/generatePdf', 'PdfController::generatePdf');
 
 $routes->get('/generate_testPdf', 'LabController::generatePdf');
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+//                                                 Services Routes
+//-------------------------------------------------------------------------------------------------------------------------
+$routes->get('/Services_form', 'ServiceController::Services_form');
+$routes->post('/saveArtMenu', 'ServiceController::saveArtMenu');
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+//                                                 Sales Routes
+//-------------------------------------------------------------------------------------------------------------------------
+$routes->get('/sales_form', 'SalesController::sales_form');
+$routes->post('SalesController/submitServices', 'SalesController::submitServices');
