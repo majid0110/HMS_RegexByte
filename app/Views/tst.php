@@ -1,10 +1,4 @@
 <?Php 
 echo('This is a test massage');
-echo ('This is test 2 Massage');
-echo ('This is test 3 Massage');
-echo ('This is test 4 Massage');
-echo ('This is test 5 Massage');
-echo ('This is test 6 Massage');
-echo ('This is test 7 Massage');
-echo ('This is test 8 Massage');
+
 ?>
